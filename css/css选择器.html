@@ -6,6 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
+        body{
+            height:3000px;
+        }
         /* id选择器 */
         #div1{
             width:200px;
@@ -38,11 +41,32 @@
         p,ul{
             color:#bfa;
         }
+
+
+        .aa{
+
+        }  
+        
         
 
+        #div5>span{
+
+        }
+
+        #div5,p{
+            width:200px;
+        }
+        /* 伪类选择器  hover鼠标滑过 */
+        a:hover{
+            color:palegreen;
+        }
+        #div1:hover{
+            color:#bfa;
+        }
     </style>
 </head>
 <body>
+
 
     <div>1111</div>
     <div id="div1">2222</div>
@@ -52,7 +76,7 @@
     <div class="aa">5555</div>
     <div>6666</div>
 
-    <div>
+    <div id="div5">
         <span>spanspan</span>
         <a href="#">aaaa</a>
         <span>spanspan</span>
@@ -64,13 +88,17 @@
     <span>spanspan</span>
 
     <ul id="ul1">
-        <li>11</li>
+        <li class="aa">11</li>
         <li class="bb">22</li>
         <li class="bb">33</li>
     </ul>
+    <a href="#">dtyefytfyetw</a>
+
 
 
     
+
+
 
 
 
