@@ -5,6 +5,12 @@
 ul{
     list-style: none;
 }
+a{
+    text-decoration: none;
+}
+body{
+    font: 12px/1.5 tahoma,arial,"\5b8b\4f53";
+}
 /* 
     inline/inline-block  水平居中通过设置父元素的text-align:center
     block  水平居中设置自己的 margin:0 auto;
@@ -34,9 +40,26 @@ ul{
 }
 .wrapper{
     width: 1230px;
-    background: #ff0000;
+    /* background: #ff0000; */
     margin:0 auto;
 }
+
+.header-login{
+    height: 40px;
+    line-height: 40px;
+    font-size: 12px;
+}
+.header-login span,.header-login a{
+    color:#999;
+}
+.header-login a{
+    padding-left:20px; 
+}
+.header-login a:hover{
+    color: #FF0036;
+}
+
+
 
 
 /*header结束 */
