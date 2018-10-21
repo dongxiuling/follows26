@@ -18,12 +18,25 @@ ul{
     display: block;
     margin:0 auto;
 }
-
 .banner1{
     display: block;
     height: 80px;
     background:#ff2f7c url(../images/banner.jpg) no-repeat center 0;
 }
 
-
 /* banner结束 */
+/* header开始 */
+#header{
+    background: #f2f2f2;
+    height: 40px;
+    box-shadow: 0 2px 4px 0px rgba(0,0,0,0.30);
+    
+}
+.wrapper{
+    width: 1230px;
+    background: #ff0000;
+    margin:0 auto;
+}
+
+
+/*header结束 */
