@@ -5,8 +5,10 @@
 ul{
     list-style: none;
 }
-
-/* inline/inline-block  通过设置父元素的text-align:center */
+/* 
+    inline/inline-block  水平居中通过设置父元素的text-align:center
+    block  水平居中设置自己的 margin:0 auto;
+*/
 /* banner开始 */
 .banner{
     text-align: center;
@@ -17,6 +19,11 @@ ul{
     margin:0 auto;
 }
 
+.banner1{
+    display: block;
+    height: 80px;
+    background:#ff2f7c url(../images/banner.jpg) no-repeat center 0;
+}
 
 
 /* banner结束 */
