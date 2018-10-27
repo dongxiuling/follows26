@@ -58,31 +58,32 @@ body{
     color: #FF0036;
 }
 .header-list{
-    float: right;
+    float:right;
 }
 .header-list li{
-    float: left;
-    line-height: 40px;
-    /* padding:0 15px 0 20px; */
+    float:left;
 }
 .header-list li>a{
-    color:#999;
-    padding:0 15px 0 20px;
-    /* padding:40px 20px; */
+    color: #999;
     display: block;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 15px 0 20px;
 }
-.header-list li a:hover{
-    color: #FF0036;
+.icon-gouwucheman,.icon-shouji{
+    color:#ff0036;
+    font-size: 14px;
 }
-.icon-gouwucheman{
-    color:#FF0036;
-    font-size: 12px;
-}
-.header-list li.list-menu:hover>a{
+/* .list-menu>a:hover{
     background: #fff;
     text-decoration: underline;
+    color: #ff0036;
+} */
+.list-menu:hover > a{
+    background: #fff;
+    text-decoration: underline;
+    color: #ff0036;
 }
-
 
 
 
