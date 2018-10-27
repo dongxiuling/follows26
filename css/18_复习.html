@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+
+            /* overflow: hidden; */
+            height:22px;
+
+        }
+        li{
+            background: #ff0000;
+            width: 200px;
+            /* display: inline-block; */
+            /* margin:-3px; */
+            float: left;
+        }
+
+       
+
+        .clearfix::after{
+            content:"";
+            display: block;
+            clear: both;
+        }
+    
+
+        /* 
+        
+         position:
+                relative 相对定位 相对于自己原来的位置  定位后空间不释放
+                absolute 绝对定位 相对于最近已定位的祖先元素 如果没有最近已定位的祖先元素 就相对于body
+                                 定位后空间释放
+                fixed    固定定位 相对于浏览器  定位后空间释放
+                static   默认的  
+        */
+
+    </style>
+</head>
+<body>
+    
+    <ul class="clearfix" >
+        <li class="a">1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+</body>
+</html>
