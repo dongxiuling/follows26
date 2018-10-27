@@ -96,12 +96,21 @@ body{
     position: absolute;
     right:7px;
     top:20px;
+    transition: transform 0.2s ease ;
 }
-
 .header-list .list-menu:hover .arrow{
     transform: rotate(180deg);
     transform-origin: 50% 25%;
 }
+.list-menu-no:hover > a{
+    color: #999;
+}
+
+
+
+
+
+
 
 
 
