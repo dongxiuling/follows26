@@ -75,10 +75,31 @@
     float: left;
     margin:0 8px;
 }
-
 .inner-cont a:hover{
     color: #ff0036;
 }
 
 
+/* 主内容区域 */
+.content{
+    height: 1000px;
+    background: url(../images/bg.jpg) center -207px no-repeat;
+}
+.slide-content{
+    height: 500px;
+    width: 1230px;
+    margin:0 auto;
+    background: #f000f0;
+}
+.category{
+    width: 200px;
+    height: 500px;
+    background: #cccccc;
+}
+.cate-title{
+    height: 36px;
+    line-height: 36px;
+    color: #fff;
+    background: #ff0036;
+}
 
