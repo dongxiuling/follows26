@@ -1,0 +1,27 @@
+.logo{
+    float: left;
+}
+.search-box{
+    float: left;
+    margin-left:70px;
+    background: pink;
+}
+.search-txt{
+    width: 483px;
+    height: 26px;
+    border:2px solid #ff0036;
+    padding: 5px 3px 5px 5px;
+    outline: none;
+    float: left;
+}
+.search-btn{
+    width: 128px;
+    height: 40px;
+    background: #ff0036;
+    color: #fff;
+    font-size: 18px;
+    border:2px solid #ff0036;
+    float: left;
+    /* 文字之间的空隙 */
+    letter-spacing: 5px;
+}
