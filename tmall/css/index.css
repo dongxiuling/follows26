@@ -1,6 +1,7 @@
 #search{
     width: 1230px;
     margin:0 auto;
+    overflow: hidden;
 }
 .logo{
     float: left;
@@ -53,7 +54,31 @@
 .search-list li.red a{
     color: #ff0036;
 }
+/* 水平分类 */
+.inner-cont{
+    height: 35px;
+    line-height: 35px;
+    /* background: #f00; */
+    width: 1030px;
+    margin:0 auto;
+    padding-left:200px;
+}
+.inner-cont img{
+    width: 100px;
+    height: 30px;
+    margin-top:2px;
+}
+.inner-cont a{
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    float: left;
+    margin:0 8px;
+}
 
+.inner-cont a:hover{
+    color: #ff0036;
+}
 
 
 
