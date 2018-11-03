@@ -100,6 +100,7 @@
     /* margin-top:-20px; */
     position: absolute;
     top:-36px;
+    z-index:2;
 }
 .cate-title{
     height: 36px;
@@ -185,4 +186,34 @@
 }
 .left-list-content a.special-color{
     color:#e54077;
+}
+/* 轮播图 */
+.slide-img-box img{
+    width: 1230px;
+    display: block;
+    height: 500px;
+}
+
+.slide-box{
+    position: relative;
+    height: 500px;
+}
+
+.slide-box a{
+    position: absolute;
+    left:0px;
+    top:0px;
+    /* z-index:-1; */
+}
+.slide-btn-box{
+    position: absolute;
+    bottom:50px;
+    left:50%;
+    background: yellow;
+    width:200px;
+    /* 已知宽度 */
+    /* margin-left:-100px; */
+    /* 不知道宽度  css3 transform: translateX(-50%); */
+    transform: translateX(-50%);
+
 }
