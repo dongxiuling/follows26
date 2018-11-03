@@ -143,3 +143,46 @@
 .category .main-cate:hover .cate-sub-list{
     display: block;
 }
+.list-left{
+    width: 543px;
+    height: 462px;
+    /* background: #ff0000; */
+    float: left;
+    padding: 19px 30px;
+}
+.list-right{
+    width: 189px;
+    height: 500px;
+    /* background: #0000ff; */
+    float: right;
+}
+.left-list-title{
+    width: 92px;
+    float: left;
+    color: #333;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 22px;
+    margin-top: 5px;
+    /* background: #f000f0; */
+}
+.left-list-content{
+    width: 451px;
+    float: left;
+    /* background: #999; */
+    border-bottom:1px dashed rgba(0,0,0,.1)
+}
+.left-list-content a{
+    color: #666;
+    font-size:14px;
+    margin-right:13px;
+}
+.left-list-content li{
+    float: left;
+}
+.list-left-row{
+    margin:5px 0;
+}
+.left-list-content a.special-color{
+    color:#e54077;
+}
