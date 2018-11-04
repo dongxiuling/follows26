@@ -269,3 +269,15 @@
 .brand-list-2 .brand-list-img img{
     width: 485px;
 }
+.brand-list-img img:hover{
+    /* 透明度 */
+    opacity: 0.8 ;
+    /* ie兼容写法 */
+    filter: alpha(opacity=80); 
+}
+.more{
+    line-height: normal;
+    /* 垂直对齐方式 */
+    vertical-align: 5px;
+
+}
