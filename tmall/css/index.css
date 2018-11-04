@@ -256,3 +256,8 @@
     height: 18px;
     /* margin-top:10px; */
 }
+.brand-list-img img{
+    width: 234px;
+    height: 316px;
+    display: block;
+}
