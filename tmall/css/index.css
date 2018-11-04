@@ -227,6 +227,7 @@
 .brand-list{
     width: 234px;
     background: #fff;
+    float: left;
 }
 .brand-list-title{
     padding-left:10px;
@@ -260,4 +261,11 @@
     width: 234px;
     height: 316px;
     display: block;
+}
+.brand-list-2{
+    width: 485px;
+    margin-left:12px;
+}
+.brand-list-2 .brand-list-img img{
+    width: 485px;
 }
