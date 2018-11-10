@@ -299,7 +299,6 @@
     height: 50px;
     display: block;
     margin:30px auto;
-
 }
 /* 浮动 或定位 宽度 内容撑的 */
 /* inline-block  inline 在父元素中居中 可以设置父元素的text-align :center */
@@ -332,7 +331,6 @@
     border-radius:9px;
     margin-top:5px;
 }
-
 .brand-logo li:hover .brand-logo-mask{
     opacity: 1;
 }

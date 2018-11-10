@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* div{
+                -webkit-transform: rotate(30deg) ;
+                -moz-transform: rotate(30deg);
+                -o-transform: rotate(30deg);
+                -ms-transform: rotate(30deg);
+                transform: rotate(30deg) ;
+            } */
+
+        h1+p {
+            background: #f00;
+        }
+
+        h1~p {
+            background: yellow;
+        }
+
+        /* #div p 并且有class属性 */
+
+        /* #div1 p[class]{
+                color:#0f0;
+            } */
+
+        /* #div1 p[class=aa]{
+                color:#0f0;
+            } */
+
+        #div1 p[class~=aa] {
+            color: aqua;
+        }
+
+
+
+
+
+
+
+        div[class|="a"] {
+            border: 2px solid #000;
+        }
+
+        /* ul li:last-child {
+            color: blue;
+        } */
+        /* ul li:only-child {
+            color: blue;
+        }
+
+        li:nth-child(2n+1){color:#f00;} 
+         */
+
+         ul:first-of-type{
+             color:chartreuse;
+         }
+
+         input[type=radio]:checked{
+             transform: translateX(50px);
+         }
+         .letter{
+             width: 100px;
+         }
+         .letter::first-line{
+             color:#f00;
+         }
+        
+    </style>
+</head>
+
+<body>
+    <!-- <div id="div1">
+            <h1>1111</h1>
+            <p class="aa">222</p>
+            <p class="aaaaa">333</p>
+            <p class="bb aa cc">444</p>
+        </div> -->
+    <p>555</p>
+    <div class="a">0</div>
+    <div class="a-test">1</div>
+    <div class="b-test">2</div>
+    <div class="c-test">3</div>
+
+
+    <ul>
+        <li>列表项一</li>
+        <li>列表项一</li>
+        <li>列表项一</li>
+        <li>列表项一</li>
+        <li>列表项一</li>
+        <li>列表项一</li>
+        <li>列表项一</li>
+    </ul>
+
+
+    <input type="radio" name="num"> 1
+    <input type="radio" name="num"> 2
+    <input type="checkbox" name="dou-num"> 11
+    <input type="checkbox"  name="dou-num"> 22
+    <input type="checkbox"  name="dou-num"> 33
+    <button >click</button>
+    <button disabled>click</button>
+
+    <div class="letter">
+        letter letter etter letter etter letter etter letter etter letter
+    </div>
+
+</body>
+
+</html>
