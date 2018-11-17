@@ -10,12 +10,29 @@
             width: 200px;
             height: 200px;
             background: #ff0000;
+
+
+
+            /*
+             forwards 设置对象状态为动画结束时的状态 */
+            animation: run 2s ease 2s 3 forwards;
             /* 触发条件  */
-            transition: width 2s ease 1s;
+            /* transition: width 2s ease 1s; */
+        }
+        @keyframes run{
+            0%{
+                
+            }
+            100%{
+                width:800px;
+            }
         }
         /* div:hover{
             width:800px;
         } */
+        
+
+
 
     </style>
 </head>
@@ -24,15 +41,15 @@
 
     </div>
 
-    <script>
+    <!-- <script>
     
         var oDIv = document.getElementById('div0');
         oDIv.onclick = function(){
             oDIv.style.width = 800 +"px";
         }
 
-        
-    </script>
+
+    </script> -->
 
 
 
