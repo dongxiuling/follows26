@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        var a = "abc";
+        var b = "def";
+        // 字符串+  字符串拼接
+
+        console.log( a+b );
+
+
+        var c = 12;
+        // c++;
+        // 先参与运算 再++
+        console.log(++c);
+
+        console.log(c);
+        
+        console.log( "5" + 5 );  //"abc5"   
+        
+        console.log( "abc" - 5 );  //NaN  not a number
+
+
+        console.log( "abc" * 5 ); 
+
+        console.log( "3" - 4 );    //1
+
+        // +字符串拼接
+        // -*/ 能转 做运算  转不了NaN
+
+        // alert( "23+45="+(23+45) );
+        console.log( "23+45="+23+45 );  
+
+        console.log(2!=2);
+
+        console.log( (2<4)==(5>3)==(3<=3)==(2>=2)==(2!=2)==(2==2)==true );
+
+        // ==值相等    === 值 类型都相等
+        console.log( 2=="2");
+        console.log( 2==="2");
+
+        // 短路 && 
+        console.log( false && 2 == 2);
+        console.log( true || false);
+        var bool = false;
+        console.log(bool+"");
+
+        var str = "";
+
+        // 字符串 非空即为真
+        // 数值  非0即为真
+        // undefined null 假
+
+
+        
+
+        var x = null;
+
+        console.log(!!str);    //快速转换boolean值的放置 
+
+        // console.log( )
+
+        console.log(!!x); 
+
+        console.log(""*1);
+
+        
+        var num = prompt("请输入年龄","18");
+
+        alert( num * 365 *24 *60 *60);
+
+
+
+        
+
+
+
+
+        
+    </script>
+    
+</body>
+</html>
