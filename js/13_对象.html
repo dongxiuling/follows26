@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 对象直接量
+        var person1 = {
+            height:120,
+            school:'唯创',
+            name:'张三',
+            play:function(a){
+                 //this 对当前对象引用   
+                console.log( this.name + "我正在玩 。。。。"+a);
+            }
+        }    
+       
+        console.log(person1.name,person1.school );
+        person1.play('哈哈哈');
+
+        var person2 = new Object();
+        person2.name = "李四";
+        person2.school = "xxx";
+        person2.sleep = function(){
+
+            console.log("我正在睡觉。。。。");
+        }
+
+        console.log(person2.name);
+        person2.sleep();
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+        
+    </script>
+
+
+    
+</body>
+</html>
