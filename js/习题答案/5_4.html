@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+    // 在页面上编程输出100~1000之间的所有素数，并要求每行显示6个素数。
+    // 105
+        var num = 0;
+        for(var i=100; i<=1000; i++){
+            var ok = 0;//标识是否为素数  
+            for(var j=2; j<i; j++){  //从2 到 i-1 只要有一个被整除 ok=1证明不是素数
+                if(i%j == 0){
+                    ok = 1;
+                }
+            }
+            if(ok == 0){
+                document.write(i+",");
+                num++;
+                if(num%6 == 0){
+                    document.write("<br/>");
+                }
+            }
+        }
+    
+    
+    </script>
+    
+</body>
+</html>
