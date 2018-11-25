@@ -18,20 +18,19 @@
         var str = ""
         function play(){
             sum++;
-            str = ""; 
+            // str = ""; 
             var a = Math.floor( Math.random()*9 +1 ); //0-1   0-9  1-10    0-9 
             var b = Math.floor( Math.random()*9 +1 ); 
             var c = Math.floor( Math.random()*9 +1 ); 
-            str = str + a + "," + b + "," + c ;
+            str =  a + "," + b + "," + c +"\n";
             if(a == 8 || b == 8 || c == 8){
                 win++;
                 str += "赢了";
             }else{
                 str += "输了";
             }
-            str += win/sum *100 +"%";
+            str +=  (win/sum *100).toFixed(2) +"%";
         }
-        
         do{
             play();
         }while(confirm(str));
