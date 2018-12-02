@@ -7,26 +7,23 @@
     <title>Document</title>
 </head>
 <body>
-
-    <!-- 1.	设计一个函数DayOfYear(d)，它接必一个日期参数d，
+    <!--
+        1.设计一个函数DayOfYear(d)，它接必一个日期参数d，
         返回一个该日期是所在年份的第几天，如DayOfYear(2000,2,8)
-        的返回值是39.
- -->
-
-
+        的返回值是39. 
+    -->
     <script>
         function isPrime(year){
             return ((year % 4 == 0 && year % 100 != 0)  ||  (year % 400 ==0));
         }
         
-
         function dayOfYear(year, month, day){
             var days = 0;
             var arr = [31,28,31,30,31,30,31,31,30,31,30,31];
             if( isPrime(year) ){
                 arr[1] = 29;
             }
-            // 加月
+            // 加月 
             for(var i=0 ; i< month-1;i++){
                 days+= arr[i];
             }
