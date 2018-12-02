@@ -21,6 +21,7 @@
             height: 30px;
             background: #ff0036;
             margin-right:3px;
+            cursor: pointer;
         }
         li.selected{
             background: greenyellow;
@@ -39,19 +40,63 @@
 </head>
 <body>
 
-    <ul id="container">
+    <div id="container">
         <ul id="btn-box">
             <li class="selected">1111</li>
             <li>2222</li>
             <li>3333</li>
         </ul>
         <div id="content">
-            <div  class="active">content1111</div>
+            <div class="active">content1111</div>
             <div>content2222</div>
             <div>content3333</div>
         </div>
     </div>
+
     <script>
+        // i = 3;   所以  aLi[i]  会返回undefined 
+        //this指对当前对象的引用  点击的是谁 this就是谁
+
+        var aLi = document.getElementsByTagName('li');
+        var oContent = document.getElementById('content');
+        var aDiv = oContent.getElementsByTagName('div');
+        for(var i=0; i<aLi.length; i++){   //页面加载的时候就会执行，给三个li都绑定点击事件 i++ 变成3
+            aLi[i].idx = i; //aLi[0].idx = 0 aLi[1].idx = 1 aLi[2].idx = 2;
+            aLi[i].onclick = function(){
+                for(var j=0; j<aLi.length; j++){ //清楚所有li的className 
+                    aLi[j].className = "";
+                }
+                this.className = "selected"; //给自己添加class = selected;
+                aDiv[this.idx].className = "active";
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+        
+
+
+
+
+
         
 
     
