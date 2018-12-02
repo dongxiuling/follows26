@@ -9,12 +9,12 @@
 </head>
 <body>
 <!-- DOM(Document Object Model)——文档对象模型  -->
-    <div id="div1">
+    <div id="div1" class="a">
         dfcghvbj
     </div>
     <ul>
         <li>111</li>
-        <li class="a">222</li>
+        <li class="a b">222</li>
         <li>111</li>
         <li class="a">222</li>
     </ul>
@@ -38,6 +38,7 @@
         // for(var i=0; i<a1.length; i++){
         //     a1[i].style.background = "purple";
         // } 
+        
 
         function getElementsByClass(clsName){
             // 取到页面中所有的元素
@@ -45,14 +46,22 @@
             var allELe = document.getElementsByTagName("*");
             for(var i=0; i<allELe.length; i++){
                 // class  是保留字   用className取到class名 
-                if( allELe[i].className == clsName ){
-                    result.push(allELe[i]);
+                //"a b" == "a"
+                var arr  = allELe[i].className.split(" "); //["a","b"]
+                for(var k=0; k<arr.length; k++){
+                    if(arr[k] == clsName){
+                        result.push(allELe[i]);
+                    }
                 }
             }
             return result;
         } 
         
-        console.log( getElementsByClass('a') );
+        var a2 =  getElementsByClass('a') ;
+
+        for(var j=0; j<a2.length; j++){
+            a2[j].style.background = "pink";
+        }
 
 
 
