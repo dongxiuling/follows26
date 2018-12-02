@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    
+</head>
+<body>
+<!-- DOM(Document Object Model)——文档对象模型  -->
+    <div id="div1">
+        dfcghvbj
+    </div>
+    <ul>
+        <li>111</li>
+        <li class="a">222</li>
+        <li>111</li>
+        <li class="a">222</li>
+    </ul>
+    <script>
+
+
+        // 获取元素常用方法
+        // 1. document.getElementById() 通过id 获取元素 返回查找的dom对象
+        var oDiv = document.getElementById('div1');
+        oDiv.style.color = "yellow";
+         //2.document.getElementsByTagName() 通过标签获取元素 返回数组 数组中存放的是DOM对象
+        // var aLi = document.getElementsByTagName('li');
+
+        // for(var i=0; i<aLi.length; i++){
+        //     aLi[i].style.background = "blue";
+        // }
+        //3.document.getElementsByClassName()  通过class名获取元素 返回数组 数组中存放的是DOM对象
+        // dom3
+        // var a1 = document.getElementsByClassName('a'); 
+            
+        // for(var i=0; i<a1.length; i++){
+        //     a1[i].style.background = "purple";
+        // } 
+
+        function getElementsByClass(clsName){
+            // 取到页面中所有的元素
+            var result = [];
+            var allELe = document.getElementsByTagName("*");
+            for(var i=0; i<allELe.length; i++){
+                // class  是保留字   用className取到class名 
+                if( allELe[i].className == clsName ){
+                    result.push(allELe[i]);
+                }
+            }
+            return result;
+        } 
+        
+        console.log( getElementsByClass('a') );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+
+
+
+
+
+
+
+        
+
+
+
+
+        
+    
+    
+    </script>
+    
+</body>
+</html>
