@@ -51,16 +51,15 @@
                 var arr  = allELe[i].className.split(" "); //["a","b","c"]
                 for(var k=0; k<arr.length; k++){
                     if(arr[k] == clsName){
-                        //判断class名 == 穿进来的clsName push到数组
+                        //判断class名 == 传进来的clsName push到数组
                         result.push(allELe[i]);
                     }
                 }
             }
             return result;
         } 
-        
+        //返回所有class名 为a的元素数组
         var a2 =  getElementsByClass('a') ;
-
         for(var j=0; j<a2.length; j++){
             a2[j].style.background = "pink";
         }
