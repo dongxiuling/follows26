@@ -73,17 +73,37 @@
         // prompt("请输入。。。",18);
 
         // 第一个参数是回调函数 第二个参数是时间间隔 已毫秒为单位 返回一个编码
-        var timer = setInterval(function(){
-            console.log( Math.random() );
-        },3000)
+        // var timer = setInterval(function(){
+        //     console.log( Math.random() );
+        // },3000)
 
 
-        var oStop = document.getElementById('stop');
-        oStop.onclick = function(){
-            // console.log(timer);
-            // 清楚定时器 
-            clearInterval(timer);
-        }
+        // var oStop = document.getElementById('stop');
+        // oStop.onclick = function(){
+        //     // console.log(timer);
+        //     // 清楚定时器 
+        //     clearInterval(timer);
+        // }
+        // 执行一次 
+        var timer1 = setTimeout(function(){
+            alert('hahah');
+        },1000);
+
+        clearTimeout(timer1);
+
+
+
+        /*  
+            window.scrollTo(0,10);
+            setTimeout()—— 暂停指定的毫秒数后执行指定的代码
+            clearTimeout()——取消指定的setTimeout函数将要执行的代码
+            setInterval()——间隔指定的毫秒数不停地执行指定的代码
+            clearInterval()——取消指定的setInterval函数将要执行的代码
+        
+            
+        
+        */
+
 
 
 
