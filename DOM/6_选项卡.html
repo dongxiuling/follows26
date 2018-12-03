@@ -39,7 +39,6 @@
     </style>
 </head>
 <body>
-
     <div id="container">
         <ul id="btn-box">
             <li class="selected">1111</li>
@@ -56,7 +55,6 @@
     <script>
         // i = 3;   所以  aLi[i]  会返回undefined 
         //this指对当前对象的引用  点击的是谁 this就是谁
-
         var aLi = document.getElementsByTagName('li');
         var oContent = document.getElementById('content');
         var aDiv = oContent.getElementsByTagName('div');
@@ -65,11 +63,15 @@
             aLi[i].onclick = function(){
                 for(var j=0; j<aLi.length; j++){ //清楚所有li的className 
                     aLi[j].className = "";
+                    aDiv[j].className = "";
                 }
                 this.className = "selected"; //给自己添加class = selected;
                 aDiv[this.idx].className = "active";
             }
         }
+
+// onmouseover 鼠标划入事件
+
 
 
 
