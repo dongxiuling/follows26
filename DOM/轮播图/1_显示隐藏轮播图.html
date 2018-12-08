@@ -27,7 +27,7 @@
         #img-box .active{
             display: block;
         }
-        #btn-box li{
+        #btn-box li,#arrow-box li{
             float: left;
             width: 20px;
             height: 20px;
@@ -48,10 +48,16 @@
             right:10px;
             bottom: 10px;
         }
+        #arrow-box{
+            position: absolute;
+            left:10px;
+            bottom:10px;
+        }
+      
     </style>
 </head>
 <body>
-    <div id="container">
+    <ul id="container">
         <div id="img-box">
             <img class="active" src="img/1.jpg" alt="">
             <img src="img/2.jpg" alt="">
@@ -66,25 +72,62 @@
             <li>4</li>
             <li>5</li>
         </ul>
+        <ul id="arrow-box">
+            <li>&lt;</li>
+            <li id="next">&gt;</li>
+        </ul>
     </div>
     <script>
-        var aBtn = document.getElementsByTagName('li');
+        var oBtnBox = document.getElementById('btn-box');
+        var aBtn = oBtnBox.getElementsByTagName('li');
         var aImg = document.getElementsByTagName('img');
+        var oNext = document.getElementById('next');
+
+        //记录当前索引
+        var iNow = 0;
 
         for(var i=0; i<aBtn.length; i++){
             // 给每个按钮自定义个属性index
             aBtn[i].index = i;
             aBtn[i].onclick = function(){
-                for(var j=0; j<aBtn.length; j++){
-                    aBtn[j].className = "";
-                    aImg[j].className = "";
-                }
-                this.className = "selected";
-                aImg[this.index].className = "active";
+                // for(var j=0; j<aBtn.length; j++){
+                //     aBtn[j].className = "";
+                //     aImg[j].className = "";
+                // }
+                // // this.className = "selected"; 为了封装函数  风格统一
+                // aBtn[this.index].className = "selected";
+                // aImg[this.index].className = "active";
+                change(this.index)
             }
         }
+        oNext.onclick = function(){
+            iNow++;
+            // for(var k=0;k<aBtn.length; k++){
+            //     aBtn[k].className = "";
+            //     aImg[k].className = "";
+            // }
+            // aBtn[iNow].className = "selected";
+            // aImg[iNow].className = "active";
+            change(iNow);
+        }
+        // 传索引是几 让索引为几的显示
+        function change(idx){
+            for(var j=0; j<aBtn.length; j++){
+                aBtn[j].className = "";
+                aImg[j].className = "";
+            }
+            aBtn[idx].className = "selected";
+            aImg[idx].className = "active";
+        }
+
 
         
+
+
+
+
+
+
 
 
 
