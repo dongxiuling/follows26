@@ -78,6 +78,7 @@
         </ul>
     </div>
     <script>
+        var oContainer = document.getElementById('container');
         var oBtnBox = document.getElementById('btn-box');
         var aBtn = oBtnBox.getElementsByTagName('li');
         var aImg = document.getElementsByTagName('img');
@@ -86,11 +87,13 @@
 
         //记录当前索引
         var iNow = 0;
+        var timer;
         for(var i=0; i<aBtn.length; i++){
             // 给每个按钮自定义个属性index
             aBtn[i].index = i;
             aBtn[i].onclick = function(){
                 change(this.index);
+                iNow = this.index;
             }
         }
         oNext.onclick = function(){
@@ -117,6 +120,42 @@
             aBtn[idx].className = "selected";
             aImg[idx].className = "active";
         }
+
+        run();
+        // 划入的时候清掉定时器
+        oContainer.onmouseover = function(){
+            clearInterval(timer);
+        }
+        // 划出开启新的定时器
+        oContainer.onmouseout= function(){
+            run();
+        }
+        function run(){
+            timer = setInterval(function(){
+                oNext.onclick();
+            },1000);
+        }
+
+        
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+        
+
+
+
         
 
 
