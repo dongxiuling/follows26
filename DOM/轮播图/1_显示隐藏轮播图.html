@@ -38,6 +38,7 @@
             line-height: 20px;
             font-size: 14px;
             border-radius: 5px;
+            cursor: pointer;
         }
         #btn-box .selected{
             background: #ff0036;
@@ -47,11 +48,9 @@
             right:10px;
             bottom: 10px;
         }
-
     </style>
 </head>
 <body>
-
     <div id="container">
         <div id="img-box">
             <img class="active" src="img/1.jpg" alt="">
@@ -68,9 +67,36 @@
             <li>5</li>
         </ul>
     </div>
+    <script>
+        var aBtn = document.getElementsByTagName('li');
+        var aImg = document.getElementsByTagName('img');
+
+        for(var i=0; i<aBtn.length; i++){
+            // 给每个按钮自定义个属性index
+            aBtn[i].index = i;
+            aBtn[i].onclick = function(){
+                for(var j=0; j<aBtn.length; j++){
+                    aBtn[j].className = "";
+                    aImg[j].className = "";
+                }
+                this.className = "selected";
+                aImg[this.index].className = "active";
+            }
+        }
+
+        
 
 
 
+
+
+
+
+
+
+        
     
+    
+    </script>
 </body>
 </html>
