@@ -73,7 +73,7 @@
             <li>5</li>
         </ul>
         <ul id="arrow-box">
-            <li>&lt;</li>
+            <li id="prev">&lt;</li>
             <li id="next">&gt;</li>
         </ul>
     </div>
@@ -82,32 +82,30 @@
         var aBtn = oBtnBox.getElementsByTagName('li');
         var aImg = document.getElementsByTagName('img');
         var oNext = document.getElementById('next');
+        var oPrev = document.getElementById('prev');
 
         //记录当前索引
         var iNow = 0;
-
         for(var i=0; i<aBtn.length; i++){
             // 给每个按钮自定义个属性index
             aBtn[i].index = i;
             aBtn[i].onclick = function(){
-                // for(var j=0; j<aBtn.length; j++){
-                //     aBtn[j].className = "";
-                //     aImg[j].className = "";
-                // }
-                // // this.className = "selected"; 为了封装函数  风格统一
-                // aBtn[this.index].className = "selected";
-                // aImg[this.index].className = "active";
-                change(this.index)
+                change(this.index);
             }
         }
         oNext.onclick = function(){
             iNow++;
-            // for(var k=0;k<aBtn.length; k++){
-            //     aBtn[k].className = "";
-            //     aImg[k].className = "";
-            // }
-            // aBtn[iNow].className = "selected";
-            // aImg[iNow].className = "active";
+            if(iNow == aBtn.length){
+                iNow = 0;
+            }
+            change(iNow);
+        }
+        // 点击上一个按钮
+        oPrev.onclick = function(){
+            iNow--;
+            if(iNow == -1){
+                iNow = aBtn.length-1;
+            }
             change(iNow);
         }
         // 传索引是几 让索引为几的显示
@@ -119,6 +117,43 @@
             aBtn[idx].className = "selected";
             aImg[idx].className = "active";
         }
+        
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
 
 
         
