@@ -18,14 +18,16 @@
             height: 291px;
             margin:100px auto;
             position: relative;
+            overflow: hidden;
+        }
+        #img-box{
+            width:3750px;
+            transition: left 2s linear;
+            position: absolute;
         }
         /* 图片 */
         #img-box img{
-            display: none;
-        }
-        /* 图片 */
-        #img-box .active{
-            display: block;
+            float: left;
         }
         #btn-box li,#arrow-box li{
             float: left;
@@ -53,7 +55,6 @@
             left:10px;
             bottom:10px;
         }
-      
     </style>
 </head>
 <body>
@@ -83,136 +84,31 @@
         var aBtn = oBtnBox.getElementsByTagName('li');
         var aImg = document.getElementsByTagName('img');
         var oNext = document.getElementById('next');
-        var oPrev = document.getElementById('prev');
+        var oPrev = document.getElementById('prev'); 
+        var oImgBox = document.getElementById('img-box');
 
-        //记录当前索引
-        var iNow = 0;
-        var timer;
+        // 点击的按钮的索引是   0    1        2        3       index
+        //    imgbox   left  0    -1*750   -2*750  -3*750    -index*750
+
         for(var i=0; i<aBtn.length; i++){
-            // 给每个按钮自定义个属性index
             aBtn[i].index = i;
             aBtn[i].onclick = function(){
-                change(this.index);
-                iNow = this.index;
+                for(var j=0; j<aBtn.length; j++){
+                    aBtn[j].className = "";
+                }
+                this.className = "selected";
+                oImgBox.style.left = -this.index *750 +"px";
+
             }
         }
-        oNext.onclick = function(){
-            iNow++;
-            if(iNow == aBtn.length){
-                iNow = 0;
-            }
-            change(iNow);
-        }
-        // 点击上一个按钮
-        oPrev.onclick = function(){
-            iNow--;
-            if(iNow == -1){
-                iNow = aBtn.length-1;
-            }
-            change(iNow);
-        }
-        // 传索引是几 让索引为几的显示
-        function change(idx){
-            for(var j=0; j<aBtn.length; j++){
-                aBtn[j].className = "";
-                aImg[j].className = "";
-            }
-            aBtn[idx].className = "selected";
-            aImg[idx].className = "active";
-        }
-        run();
-        // 划入的时候清掉定时器
-        oContainer.onmouseover = function(){
-            clearInterval(timer);
-        }
-        // 划出开启新的定时器
-        oContainer.onmouseout= function(){
-            run();
-        }
-        function run(){
-            timer = setInterval(function(){
-                oNext.onclick();
-            },1000);
-        }
 
-        
 
-
-
-
-
-
-
-
-        
-
-
-
-
-
-
-        
-
-
-
-        
-
-
-
-
-
-
-
-
-
-
-        
-
-
-
-
-
-
-
-
-
-        
-
-
-
-
-
-
-
-
-        
-
-
-
-
-
-
-
-
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
+    
+    
     
     
     </script>
+
+
 </body>
 </html>
