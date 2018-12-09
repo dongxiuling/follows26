@@ -22,8 +22,9 @@
         }
         #img-box{
             width:3750px;
-            transition: left 2s linear;
             position: absolute;
+            left:0;  /* 默认值为auto   */
+            transition: left 2s linear;
         }
         /* 图片 */
         #img-box img{
@@ -60,7 +61,7 @@
 <body>
     <ul id="container">
         <div id="img-box">
-            <img class="active" src="img/1.jpg" alt="">
+            <img src="img/1.jpg" alt="">
             <img src="img/2.jpg" alt="">
             <img src="img/3.jpg" alt="">
             <img src="img/4.jpg" alt="">
@@ -97,10 +98,13 @@
                     aBtn[j].className = "";
                 }
                 this.className = "selected";
+                // img-box元素定位 显示对应的图片
                 oImgBox.style.left = -this.index *750 +"px";
-
             }
         }
+
+        
+
 
 
     
