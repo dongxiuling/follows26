@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            background: url(img/bg.png);
+        }
+        #container {
+            width: 700px;
+            height: 350px;
+            /* background: #cccccc; */
+            margin: 100px auto 50px;
+            perspective: 800px;
+        }
+        #container img{
+            width: 70px;
+            height: 70px;
+            float: left;
+        }
+        #btn{
+            width: 100px;
+            height: 30px;
+            background: #cccccc;
+            margin:0 auto;
+            border-radius: 5px;
+            text-align: center;
+            line-height: 30px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="container">
+        <img src="img/1.jpg" alt="">
+        <img src="img/2.jpg" alt="">
+        <img src="img/3.jpg" alt="">
+        <img src="img/4.jpg" alt="">
+        <img src="img/5.jpg" alt="">
+        <img src="img/6.jpg" alt="">
+        <img src="img/7.jpg" alt="">
+        <img src="img/8.jpg" alt="">
+        <img src="img/9.jpg" alt="">
+        <img src="img/10.jpg" alt="">
+        <img src="img/11.jpg" alt="">
+        <img src="img/12.jpg" alt="">
+        <img src="img/13.jpg" alt="">
+        <img src="img/14.jpg" alt="">
+        <img src="img/15.jpg" alt="">
+        <img src="img/16.jpg" alt="">
+        <img src="img/17.jpg" alt="">
+        <img src="img/18.jpg" alt="">
+        <img src="img/19.jpg" alt="">
+        <img src="img/20.jpg" alt="">
+        <img src="img/21.jpg" alt="">
+        <img src="img/22.jpg" alt="">
+        <img src="img/23.jpg" alt="">
+        <img src="img/24.jpg" alt="">
+        <img src="img/25.jpg" alt="">
+        <img src="img/26.jpg" alt="">
+        <img src="img/27.jpg" alt="">
+        <img src="img/28.jpg" alt="">
+        <img src="img/29.jpg" alt="">
+        <img src="img/30.jpg" alt="">
+        <img src="img/31.jpg" alt="">
+        <img src="img/32.jpg" alt="">
+        <img src="img/33.jpg" alt="">
+        <img src="img/34.jpg" alt="">
+        <img src="img/35.jpg" alt="">
+        <img src="img/36.jpg" alt="">
+        <img src="img/37.jpg" alt="">
+        <img src="img/38.jpg" alt="">
+        <img src="img/39.jpg" alt="">
+        <img src="img/40.jpg" alt="">
+        <img src="img/41.jpg" alt="">
+        <img src="img/42.jpg" alt="">
+        <img src="img/43.jpg" alt="">
+        <img src="img/44.jpg" alt="">
+        <img src="img/45.jpg" alt="">
+        <img src="img/46.jpg" alt="">
+        <img src="img/47.jpg" alt="">
+        <img src="img/48.jpg" alt="">
+        <img src="img/49.jpg" alt="">
+        <img src="img/50.jpg" alt="">
+    </div>
+    <div id="btn">开始旋转</div>
+
+    <script>
+        var oBtn = document.getElementById('btn');
+        // 返回图片数组
+        var aImg = document.getElementsByTagName('img');
+        // 定义动画执行几次
+        
+        oBtn.onclick = function(){
+            var num = 0;
+            // es6 中语法let  i定义时的i 
+            for(let i=0; i<aImg.length;i++){
+                aImg[i].style.transitionDuration = "300ms";
+                setTimeout(function(){
+                    // 1.让图片 缩放
+                    aImg[i].style.transform = "scale(0)";
+                    //2.图片缩放完成 执行
+                    aImg[i].addEventListener('transitionend',function(){
+                        console.log(num);
+                        num++;
+                        if( num == 50){
+                            nextRotate();
+                        }
+                    },false);
+                },Math.random()*500);
+            }
+        }
+        // 旋转
+        function nextRotate(){
+            console.log('okoko');
+
+            for(let i=0; i<aImg.length; i++){
+                // 3.瞬间 发生3D变幻
+                aImg[i].style.transition = "";
+                aImg[i].style.transform = "rotateY(0deg) translateX(-1000px) translateZ(-" + Math.random()*600 + "px)";
+
+                // 4.转
+                setTimeout(function(){
+                    aImg[i].style.transition = "1.5s";
+                    aImg[i].style.transform = "rotateY(-360deg) translateX(0) translateZ(0)";
+                    // aImg[i].style.transform = "rotateY(360deg) translateZ(0px)";
+                },Math.random()*500);
+            }
+        }
+    </script>
+</body>
+
+</html>
