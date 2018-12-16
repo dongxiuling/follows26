@@ -29,6 +29,10 @@
             height: 400px;
             overflow: hidden;
             display: none;
+            position: relative;
+        }
+        #big-img{
+            position: absolute;
         }
 
     </style>
@@ -39,22 +43,50 @@
         <span></span>
     </div>
     <div id="big-box">
-        <img src="2.jpg" alt="">
+        <img id="big-img" src="2.jpg" alt="">
     </div>
 
     <script>
         var oSmallBox = document.getElementById('small-box');
         var oBigBox = document.getElementById('big-box');
         var oSpan = document.getElementsByTagName('span')[0];
+        var oBigImg = document.getElementById('big-img');
+
         oSmallBox.onmouseover = function(){
             oSpan.style.display = "block";
             oBigBox.style.display = "block";
         }
-
         oSmallBox.onmousemove = function(e){
             oSpan.style.left = e.clientX - oSpan.offsetWidth/2 +"px";
             oSpan.style.top = e.clientY -  oSpan.offsetHeight/2+"px";
+            if(oSpan.offsetLeft <= 0){
+                oSpan.style.left = 0;
+            }
+            if(oSpan.offsetLeft >= oSmallBox.offsetWidth - oSpan.offsetWidth){
+                oSpan.style.left =  oSmallBox.offsetWidth - oSpan.offsetWidth + "px";
+            }
+            if(oSpan.offsetTop <= 0){
+                oSpan.style.top = 0;
+            }
+            if(oSpan.offsetTop >= oSmallBox.offsetHeight - oSpan.offsetHeight){
+                oSpan.style.top = oSmallBox.offsetHeight - oSpan.offsetHeight +"px";
+            }
+            // 左边span能走最大距离  oSmallBox - span
+            var smallMax  =  oSmallBox.offsetWidth - oSpan.offsetWidth;
+            // 右边大图能走最大距离  oBigImg - oBigBox
+            var bigMax  =  oBigImg.offsetWidth - oBigBox.offsetWidth;
+            //左边span当前走的百分比
+            var percent = oSpan.offsetLeft/smallMax;
 
+            oBigImg.style.left = -bigMax*percent +"px";
+
+
+
+    
+        }
+        oSmallBox.onmouseout = function(){
+            oSpan.style.display = "none";
+            oBigBox.style.display = "none";
         }
     
     </script>
