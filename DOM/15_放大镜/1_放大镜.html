@@ -34,7 +34,6 @@
         #big-img{
             position: absolute;
         }
-
     </style>
 </head>
 <body>
@@ -73,16 +72,16 @@
             }
             // 左边span能走最大距离  oSmallBox - span
             var smallMax  =  oSmallBox.offsetWidth - oSpan.offsetWidth;
+            var smallMaxY  =  oSmallBox.offsetHeight - oSpan.offsetHeight;
             // 右边大图能走最大距离  oBigImg - oBigBox
             var bigMax  =  oBigImg.offsetWidth - oBigBox.offsetWidth;
+            var bigMaxY  =  oBigImg.offsetHeight - oBigBox.offsetHeight;
             //左边span当前走的百分比
             var percent = oSpan.offsetLeft/smallMax;
+            var percentY = oSpan.offsetTop / smallMaxY;
 
-            oBigImg.style.left = -bigMax*percent +"px";
-
-
-
-    
+            oBigImg.style.left = -bigMax * percent +"px";
+            oBigImg.style.top = -bigMaxY * percentY +"px";
         }
         oSmallBox.onmouseout = function(){
             oSpan.style.display = "none";
@@ -90,12 +89,5 @@
         }
     
     </script>
-
-
-
-
-
-
-
 </body>
 </html>
