@@ -21,7 +21,7 @@
             overflow: hidden;
         }
         #img-box{
-            width:3750px;
+            width:4500px;
             position: absolute;
             left:0;  /* 默认值为auto   */
             /* transition: left 1s linear; */
@@ -82,53 +82,39 @@
     </div>
     <script src="../jslib.js"></script>
     <script>
-        var oContainer = document.getElementById('container');
-        var oBtnBox = document.getElementById('btn-box');
-        var aBtn = oBtnBox.getElementsByTagName('li');
-        var aImg = document.getElementsByTagName('img');
+
         var oNext = document.getElementById('next');
-        var oPrev = document.getElementById('prev'); 
         var oImgBox = document.getElementById('img-box');
+        var oBtnBox = document.getElementById('btn-box');
+        var aImg = document.getElementsByTagName('img');
+        var aLi = oBtnBox.getElementsByTagName('li');
         var iNow = 0;
+
         oNext.onclick = function(){
             iNow++;
+            // 瞬间拽到第0张图片  索引改为1
+            if(iNow == aImg.length){
+                oImgBox.style.left = 0;
+                iNow = 1;
+            }
             change(iNow);
         }
-        function change(idx){
-            // animate 设置元素left属性值为 -idx*750 
+
+        // 图片索引 0  1       2             n
+
+        // 移动left 0  1*-750  2*-750       n*-750
+
+        function change(index){
+            for(var i=0; i<aLi.length; i++){
+                aLi[i].className = "";
+            }
+            aLi[index == 5?0:index].className = "selected";
+            // 这个方法不用写px
             animate(oImgBox,{
-                left: -idx*750
+                left :-index *750 
             });
-            // oImgBox.style.left = -idx*750+"px";
         }
 
-        
-
-
-
-
-
-
-
-        
-
-
-
-
-
-
-
-
-
-        
-
-
-
-        
-
-
-
-        
 
 
 
@@ -139,7 +125,6 @@
 
 
     </script>
-
 
 </body>
 </html>
