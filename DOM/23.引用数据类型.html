@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
+
 <body>
 
     <script>
@@ -24,11 +26,11 @@
 
 
         var person1 = {
-            name:"zs",
-            age:10,
-            father:{
-                name:'zxx',
-                age:40
+            name: "zs",
+            age: 10,
+            father: {
+                name: 'zxx',
+                age: 40
             }
         }
         // var person2 = person1;
@@ -47,16 +49,16 @@
 
         // console.log(person2);
         //浅拷贝  深克隆 
-        function clone(obj){
+        function clone(obj) {
             var result = {};
-            for(var key in obj){
-                if(typeof obj[key]  == "object"){ //如果是对象 
-                    result[key]  = clone(obj[key]);
-                }else{
+            for (var key in obj) {
+                if (typeof obj[key] == "object") { //如果是对象 
+                    result[key] = clone(obj[key]);
+                } else {
                     result[key] = obj[key];
                 }
             }
-            return  result;
+            return result;
         }
 
         var person3 = clone(person1);
@@ -64,32 +66,8 @@
         person1.father.name = "zyy";
         // person1.name = "lisi";
         console.log(person3);
-
-
-
-
-
-
-
-
-
-
-        
-
-
-
-
-
-
-
-
-
-
-
-
-    
-    
     </script>
-    
+
 </body>
+
 </html>
