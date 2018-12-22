@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="div1">
+        aaaa
+        <p id="p1">pppppp</p>
+    </div>
+
+    <button id="btn">remove</button>
+
+    <script>
+        /*
+            1.创建节点createElement()
+            2.appendChild() 插入到内部的后边
+            3.removeChild() 删除
+            4.replaceChild (newnode,oldnode)
+            5.insertBefore (newnode,refnode)
+            6.cloneNode
+
+            setAttribute();
+            getAttribute();
+        */
+        var oBtn =  document.getElementById('btn');
+
+
+        var oH1 = document.createElement('h1');
+        oH1.innerHTML = "hahah";
+
+        var oDiv1 = document.getElementById('div1');
+        var oP = document.getElementById('p1');
+
+        oDiv1.appendChild(oH1);
+
+        var oSpan = document.createElement('span');
+        oSpan.innerHTML = "哈哈";
+
+        // var obody = document.body;
+
+        oBtn.onclick = function(){
+            // oDiv1.removeChild(oP);
+            // oDiv1.replaceChild(oSpan,oP);
+
+            // oDiv1.insertBefore(oSpan,oP);
+
+            var oDiv11 = oDiv1.cloneNode(true);
+            document.body.appendChild(oDiv11);
+        }
+
+
+
+        // oDiv1.className = "xx";
+
+        // console.log( oDiv1.className  );
+
+        // oDiv1.index =  1;
+
+        // console.log(oDiv1.index)
+
+        oDiv1.setAttribute("xx","111");
+        console.log( oDiv1.getAttribute("xx"));
+
+
+
+    
+    
+    </script>
+    
+</body>
+</html>
