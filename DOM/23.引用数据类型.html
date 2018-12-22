@@ -25,7 +25,11 @@
 
         var person1 = {
             name:"zs",
-            age:10
+            age:10,
+            father:{
+                name:'zxx',
+                age:40
+            }
         }
         // var person2 = person1;
         // var person2 = {};
@@ -42,20 +46,33 @@
         // }
 
         // console.log(person2);
-
+        //浅拷贝  深克隆 
         function clone(obj){
-            var result = {}
+            var result = {};
             for(var key in obj){
-                result[key] = obj[key];
+                if(typeof obj[key]  == "object"){ //如果是对象 
+                    result[key]  = clone(obj[key]);
+                }else{
+                    result[key] = obj[key];
+                }
             }
             return  result;
         }
 
         var person3 = clone(person1);
-        person1.name = "lisi";
+
+        person1.father.name = "zyy";
+        // person1.name = "lisi";
         console.log(person3);
 
-        
+
+
+
+
+
+
+
+
 
         
 
