@@ -10,8 +10,9 @@
 <body>
     <div id="div1">
         <!-- 这是注释 -->
-        <ul>
+        <ul id="ul1">
             <li>111</li>
+            <li>222</li>
         </ul>
     </div>
     <div id="div2">
@@ -25,6 +26,7 @@
         var oDiv1 = document.getElementById('div1');
         var oDiv2 = document.getElementById('div2');
         var oDiv3 = document.getElementById('div3');
+        var oUl1 = document.getElementById('ul1');
         // var arr = document.getElementsByClassName('aa');
         // var a1 = document.getElementsByTagName('p');
         // var a2 = document.getElementsByName('username');
@@ -49,6 +51,10 @@
         // 节点的遍历
         /*
         1.nextSibling     nextElementSibling  dom3
+        2.previousSibling     previousElementSibling  dom3
+        3.firstChild  firstElementChild
+        4.lastChild   lastElementChild
+
 
 
         */
@@ -63,20 +69,53 @@
             }while( elem && elem.nodeType != 1)
             return elem;
         }
-
         var oDiv22 = next(oDiv1);
         oDiv22.style.background = "red";
         console.log( next(oDiv3) );
-
-
-        // var a = 5; 非0数字 非空字符串  null undefined
-
+        
+        // var a = 5; 非0数字 非空字符串  null和undefined 都为无效值
         // var x = null;
         // if(x){  //有效值  非 null  非undefiend  false 
         //     console.log('有效');
         // }else{
         //     console.log('无效');
         // }
+
+        // console.log(oDiv2.previousElementSibling);
+
+        function prev(elem){
+            do{
+                elem = elem.previousSibling;
+            }while( elem && elem.nodeType != 1)
+            return elem;
+        }
+        console.log( prev(oDiv2));
+
+        function first(elem){
+            elem = elem.firstChild;
+            if(elem.nodeType == 1){
+                return elem;
+            }else{
+                return next(elem);
+            }
+        }
+        console.log( first(oUl1)  );
+
+
+
+
+
+
+
+
+
+
+        
+
+
+        
+
+
 
 
 
