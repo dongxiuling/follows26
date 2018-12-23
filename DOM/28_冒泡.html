@@ -47,15 +47,18 @@
         */
 
            
-        oDiv2.addEventListener('click',function(){
-            console.log("div2 捕获");
-        },true); 
-        oDiv1.addEventListener('click',function(){
-            console.log("div1 捕获");
-        },true);
+        // oDiv2.addEventListener('click',function(){
+        //     console.log("div2 捕获");
+        // },true); 
+        // oDiv1.addEventListener('click',function(){
+        //     console.log("div1 捕获");
+        // },true);
 
-        oDiv2.addEventListener('click',function(){
+        oDiv2.addEventListener('click',function(e){
             console.log("div2 冒泡");
+            e.stopPropagation();
+            e.cancelBubble = true;
+
         },false); 
         oDiv1.addEventListener('click',function(){
             console.log("div1 冒泡");
