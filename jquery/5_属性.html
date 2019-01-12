@@ -10,13 +10,15 @@
     <input type="text" value="请输入用户名" id="txt">
     <script src="jquery-1.12.4.js"></script>
     <script>
-        // $('#txt').on('focus',function(){
-        //     $(this).val("");
-        // })
-        // $('#txt').on('blur',function(){
-        //     console.log( $(this).val()  );
-        // })
-
+        /*
+            $('#txt').on('focus',function(){
+                $(this).val("");
+            })
+            $('#txt').on('blur',function(){
+                console.log( $(this).val()  );
+            })
+        */
+        // focus获取焦点
         $('#txt').on('focus',function(){
             // value 输入框输入的值
             // efaultValue 输入框的默认值 
@@ -26,6 +28,7 @@
                 this.value = "";
             }
         })
+        // focus失去焦点
         $('#txt').on('blur',function(){
             if(this.value == ""){
                 this.value = this.defaultValue;
