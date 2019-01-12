@@ -36,7 +36,24 @@
         <p>ddddddddd</p>
     </div>
 
+    <button>click</button>
+    <input type="button" id="btn" value="click">
+
+    <input type="checkbox" name="school"> 唯创
+    <input type="checkbox" name="school" checked="true"> 黑大
+    <input type="checkbox" name="school"> 理工
+
     <input type="hidden" name="">
+
+    <input type="file">
+
+    <select id="sel">
+        <option value="heida">黑大</option>
+        <option value="heida">理工</option>
+        <option value="heida">林大</option>
+    </select>
+
+
 
     <script src="jquery-1.12.4.js"></script>
     <script>
@@ -83,10 +100,21 @@
         // $('li:parent').css('background','green');
 
         // $('p:hidden').css('display',"block");
-        $('p:hidden').css('display',"block");
         
-        
+        // $(':button')
 
+        // $(":checkbox")
+
+        // $("#btn").on('click',function(){
+        //     $(":checked").prop("checked",false);
+        // })
+
+        // $('input')
+        // $(':input')
+
+        $('#btn').on('click',function(){
+           console.log( $('option:selected').html() );
+        });
 
     </script>
 
