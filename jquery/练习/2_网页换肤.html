@@ -25,7 +25,7 @@
             float: left;
             margin-right: 10px;
             background-image: url(theme.gif);
-            background-repeat: no-repeat;
+            /* background-repeat: no-repeat; */
         }
         .news{
             width: 100px;
@@ -68,24 +68,50 @@
         li:nth-child(6).active{
             background-position: -20px -15px;
         }
+        .bg0{
+            background: #9a9a9a;
+        }
+        .bg1{
+            background: #ba3ad9;
+        }
+        .bg2{
+            background: #e11355;
+        }
+        .bg3{
+            background:#08b3ce 
+        } 
+        .bg4{
+            background: #fba60a;
+        }
+        .bg5{
+            background: #afd400;
+        }
     </style>
 </head>
 <body>
     <div id="container">
         <ul>
-            <li></li>
-            <li></li>
             <li class="active"></li>
             <li></li>
             <li></li>
             <li></li>
+            <li></li>
+            <li></li>
         </ul>
-        <div class="news">时事新闻</div>
-        <div class="news">娱乐新闻</div>
+        <div class="news bg0">时事新闻</div>
+        <div class="news bg0">娱乐新闻</div>
     </div>
 
     <script src="../jquery-1.12.4.js"></script>
     <script>
+        $('li').on('click',function(){
+            // 点击按钮 自己变
+            $(this).addClass('active').siblings().removeClass('active');
+            //news变色
+            $('.news').attr('class','news bg'+$(this).index());
+        });
+
+        
         
     
     
