@@ -93,10 +93,15 @@
         })
         function change(index){
             $('#btn-box li').eq(index).addClass('selected').siblings().removeClass('selected');
-            $('#img-box').animate({
+            $('#img-box').stop().animate({
                 left:-index*$('img').width()
             },1000);
         }
+
+        
+
+
+
 
 
 
