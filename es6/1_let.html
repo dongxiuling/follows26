@@ -21,6 +21,8 @@
         /* let 与 var区别 
             1.let没有变量提升
             2.块级作用域
+            3.不能重复声明
+            4.let暂时性死区 （临时失效区） 在当前作用域不允许有同名的变量进来
         */
 
         // for(let i = 0; i<5; i++){
@@ -40,13 +42,19 @@
 
         // console.log(a);
 
-        // var aLi = document.getElementsByTagName('li');
+        /*
+        var aLi = document.getElementsByTagName('li');
         for(let i=0; i<aLi.length; i++){
             aLi[i].onclick = function(){
                 console.log(i);
             }
         }
-
+        */
+        /* 
+           闭包：外部函数中有一个内部函数，内部函数引用外部函数中的局部变量 ，
+           使得这个外部函数中的局部变量不释放 ,一直可以访问
+           缺点 内存泄漏
+        */
         // for(var i=0; i<aLi.length; i++){
         //     (function(i){
         //         aLi[i].onclick = function(){
@@ -55,7 +63,49 @@
         //     })(i)
         // }
 
+        // let a = 10;
+        // a = 20;
+        // console.log(a);
+
+        // let暂时性死区 （临时失效区） 在当前作用域不允许有同名的变量进来
+        var a = 5  ;
+        function fn(){
+            console.log(a);
+            let a = 10;
+        }
+        fn();
+
+
+
+
+
+
+
+
+
         
+
+
+        
+
+
+
+        
+
+        
+
+
+
+
+
+        
+
+
+
+
+
+
+
 
 
         
