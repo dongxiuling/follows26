@@ -17,9 +17,9 @@
     <script>
         var aLi = document.getElementsByTagName('li');
         // 类数组转化成数组
-        var a = Array.from(aLi);
-        a.push('ha');
-        console.log(a);
+        // var a = Array.from(aLi);
+        // a.push('ha');
+        // console.log(a);
 
         // console.log() Array.of()
         // var arr = new Array(3);
@@ -31,22 +31,24 @@
         // console.log( arr);
         // console.log( arr.copyWithin(0,2,6) );
         // 返回第一个符合条件的成员
-        // var result = arr.find(function(val,index){
-        //     // console.log(val,index);
-        //     return index>1;
-        // })
-        // console.log(result);
+        var result = arr.find(function(val,index){
+            console.log(val,index);
+            return index>1;
+        })
+        console.log(result);
         // console.log(arr.fill('xx',1,4))
 
-        for( var val of arr){
-            console.log(val);
-        }
-        for( var index of arr.keys()){
-            console.log(index);
-        }
-        for( var [index,val] of arr.entries()){
-            console.log(index,val);
-        }
+        // for( var val of arr){
+        //     console.log(val);
+        // }
+        // for( var index of arr.keys()){
+        //     console.log(index);
+        // }
+        // for( var [index,val] of arr.entries()){
+        //     console.log(index,val);
+        // }
+
+        
 
 
 
