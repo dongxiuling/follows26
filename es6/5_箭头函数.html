@@ -9,7 +9,17 @@
 <body>
     <button id="btn">click</button>
     <script>
-     
+     /* 
+        箭头函数this指向：
+            箭头函数中this指的是声明时的this   父作用域中的this
+            普通函数中this指的是调用时的this
+        箭头函数不能用于构造函数
+        箭头函数中不能使用arguments
+
+
+
+        
+     */
         // function a(){
         //     console.log('a');
         // }  
@@ -28,19 +38,17 @@
 
         // var fn = x => console.log('fn',x);
 
-        // var fn2 = ([x,y=5]) => {
+        // var fn2 = (x,y,z) => {
         //     console.log(x,y);
         // }
-        // fn2('abc'); 
-        // console.log(fn2.name );
+        // fn2(1,2,3); 
+        // console.log(fn2.length );
 
         // var f1 = function(){
         //     console.log(this);
         // }
         // f1();
-        /* 箭头函数中this指的是声明时的this   父作用域中的this
-           普通函数中this指的是调用时的this
-        */
+    
         
         var oBtn = document.getElementById('btn');
 
@@ -68,19 +76,45 @@
         //     }
         // }
         
-        let obj = {
-            name:'zxs',
-            age:21,
-            say:function() {
-                setTimeout(() => {
-                    console.log(this);
-                });
-            }
-        }
+        // let obj = {
+        //     name:'zxs',
+        //     age:21,
+        //     say:function() {
+        //         setTimeout(() => {
+        //             console.log(this);
+        //         });
+        //     }
+        // }
 
-        obj.say();
+        // obj.say();
+
+        // function Person(){
+            
+
+        // }
+        // var p1 = new Person();
+        // let Person = () => {
+
+        // }
+
+        // new Person();//报错
+
+        var fn = (...rest) => {
+            // console.log(arguments);
+            console.log(rest);
+        }
+        fn(1,2,3);
+
         
 
+
+
+
+
+
+
+
+        
         /*
             this指向问题 
             函数中 window
