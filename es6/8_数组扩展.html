@@ -40,21 +40,20 @@
         */
         // console.log(arr.fill('xx',1,4))
 
-        // for( var val of arr){
-        //     console.log(val);
-        // }
-        // for( var index of arr.keys()){
-        //     console.log(index);
-        // }
-        // for( var [index,val] of arr.entries()){
-        //     console.log(index,val);
-        // }
-
-
-        // arr.forEach(function(val,index){
-        //     console.log(val,index)
-        // })
-
+        for( var val of arr){
+            console.log(val);
+        }
+        for( var index of arr.keys()){
+            console.log(index);
+        }
+        for( var [index,val] of arr.entries()){
+            console.log(index,val);
+        }
+        //没有返回值，只是针对每个元素调用func
+        arr.forEach(function(val,index){
+            console.log(val,index)
+        })
+       //返回原数组处理过的新数组
         var result = arr.map(function(val,index){
             // return val+"xx";
             if(index>3){
@@ -85,6 +84,7 @@
         // console.log(arr);
         // console.log(result1);
 
+        //返回过滤出的符合条件的新数组
         var result2 = arr1.filter(function(obj,index){
             return obj.age>18;
         });
