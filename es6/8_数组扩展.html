@@ -31,11 +31,13 @@
         // console.log( arr);
         // console.log( arr.copyWithin(0,2,6) );
         // 返回第一个符合条件的成员
+        /*
         var result = arr.find(function(val,index){
             console.log(val,index);
             return index>1;
         })
         console.log(result);
+        */
         // console.log(arr.fill('xx',1,4))
 
         // for( var val of arr){
@@ -48,7 +50,52 @@
         //     console.log(index,val);
         // }
 
-        
+
+        // arr.forEach(function(val,index){
+        //     console.log(val,index)
+        // })
+
+        var result = arr.map(function(val,index){
+            // return val+"xx";
+            if(index>3){
+                return val+"xx";
+            }else{
+                return val+"yy";
+            }
+        });
+        console.log(result);
+        var arr1 = [
+            {
+                name:'zs',
+                age:10
+            },{
+                name:'ls',
+                age:20
+            },{
+                name:'ww',
+                age:15
+            },{
+                name:'xx',
+                age:30
+            }
+        ]
+        // var result1 = arr.filter(function(val,index){
+        //     return index>1;
+        // })
+        // console.log(arr);
+        // console.log(result1);
+
+        var result2 = arr1.filter(function(obj,index){
+            return obj.age>18;
+        });
+
+        console.log(result2);
+
+
+
+
+
+
 
 
 
