@@ -65,17 +65,18 @@
         //     }
         // }
         
-        var obj = {
+        let obj = {
             name:'zxs',
             age:21,
-            say:function(){
+            say:function() {
                 setTimeout(() => {
                     console.log(this);
-                })
+                });
             }
         }
-        
+
         obj.say();
+        
 
         /*
             this指向问题 
