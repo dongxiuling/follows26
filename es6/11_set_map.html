@@ -39,7 +39,24 @@
         // console.log(c.has(3));
         console.log(c.size);
 
-        
+
+        let e = new Map();
+        let obj = {
+            name:'zs'
+        }
+        e.set('name','zs');
+        e.set(obj,'xxx');
+
+
+        console.log(e.get('name'));
+        // e.delete('name');
+        console.log(e.has('name'));
+
+        // e.clear();
+        console.log(e);
+        console.log({...e});
+
+
 
 
 
