@@ -39,15 +39,23 @@
         });
     
         p1.then(function(id){
-            $.get('http://127.0.0.1/meituan/welcome/comment?commentid='+id,{
-            },function(data){
-                console.log(data.title);
-            },'json');
-        }).catch(function(){
-            console.log('失败+1')
-        });
+            let p2 = new Promise(function(resolve){
+                $.get('http://127.0.0.1/meituan/welcome/comment?commentid='+id,{
+                },function(data){
+                    console.log(data.title);
+                    resolve();
+                },'json');
+            })
+            return p2;
+        },function(){
+            console.log('失败')
+        }).then(function(){
+            
+        })
 
-        
+
+
+
 
 
         
