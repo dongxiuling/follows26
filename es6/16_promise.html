@@ -37,8 +37,8 @@
                 //失败调用reject  pending => rejected
             },"json");
         });
-    
         p1.then(function(id){
+            // p1成功
             let p2 = new Promise(function(resolve){
                 $.get('http://127.0.0.1/meituan/welcome/comment?commentid='+id,{
                 },function(data){
@@ -48,10 +48,12 @@
             })
             return p2;
         },function(){
-            console.log('失败')
+            console.log('p1失败');
         }).then(function(){
-            
-        })
+            console.log('p2成功');
+        },function(){
+            console.log('p2失败');
+        });
 
 
 
