@@ -51,16 +51,18 @@
         }
         //没有返回值，只是针对每个元素调用函数
         arr.forEach(function(val,index){
+
             console.log(val,index)
         })
        //返回原数组处理过的新数组
         var result = arr.map(function(val,index){
             // return val+"xx";
-            if(index>3){
-                return val+"xx";
-            }else{
-                return val+"yy";
-            }
+            // if(index>3){
+            //     return val+"xx";
+            // }else{
+            //     return val+"yy";
+            // }
+            return val*2;
         });
         console.log(result);
         var arr1 = [

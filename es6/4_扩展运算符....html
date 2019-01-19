@@ -75,10 +75,11 @@
         // arguments 参数 类数组
         // arguments.callee 函数自己
 
-        function fn(){
+        function fn(a,b,...rest){
             console.log(arguments.callee);
         }
         fn(1,2,3,4,5,6);
+
         
 
 
