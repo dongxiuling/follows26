@@ -59,7 +59,11 @@
             yield getComments(id);
         }
         let g = gen();
+        console.log(g.next());
         g.next();
+        console.log(g.next());
+
+
 
         function getPro(){
             $.get('http://192.168.7.126/meituan/welcome/product',{
@@ -74,7 +78,6 @@
                 commentid:id
             },function(data){
                 console.log(data);
-                g.next()
             },'json');
         }
 
