@@ -11,7 +11,8 @@
 </head>
 <body>
     <div id="app">
-        <input type="text" @keyup="fn()">
+        <!-- @keyup.enter   @keyup.13    -->
+        <input type="text" @keyup.enter="fn()">
     </div>
     <script src="vue.js"></script>
     <script>
@@ -26,7 +27,6 @@
                 //         console.log('haha');  
                 //    }
                 console.log('haha');
-                    
                }
             }
         })
