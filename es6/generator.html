@@ -62,7 +62,7 @@
         g.next();
 
         function getPro(){
-            $.get('http://127.0.0.1/meituan/welcome/product',{
+            $.get('http://192.168.7.126/meituan/welcome/product',{
                 id:1
             },function(data){
                 // console.log(data.comment);
@@ -70,13 +70,16 @@
             },'json');
         }
         function getComments(id){
-            $.get('http://127.0.0.1/meituan/welcome/comment',{
+            $.get('http://192.168.7.126/meituan/welcome/comment',{
                 commentid:id
             },function(data){
                 console.log(data);
                 g.next()
             },'json');
         }
+
+
+
 
 
 
