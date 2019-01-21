@@ -30,15 +30,16 @@
     <script src="../jquery/jquery-1.12.4.js"></script>
     <script>
         // 指针对象
-        // function* test(){
-        //     console.log('111');
-        //     let x = yield console.log('yield....');
-        //     console.log(x);
-        //     console.log('222');
-        // }
-        // var test = test();
-        // test.next();
-        // test.next('hahaha');
+        function* test(){
+            console.log('111');
+            let x = yield 'hahah';
+            console.log(x);
+            console.log('222');
+            return 'ok over';
+        }
+        var test = test();
+        console.log(test.next());
+        console.log(test.next());
 
         // function* test2(){
         //     console.log('开始');
@@ -52,34 +53,31 @@
         // t.next('okokok');
         // t.next();
 
-        function* gen(){
-            console.log('请求开始');
-            let id = yield getPro();
-            console.log('第一个请求完成 返回的id是'+id);
-            yield getComments(id);
-        }
-        let g = gen();
-        console.log(g.next());
-        g.next();
-        console.log(g.next());
+        // function* gen(){
+        //     console.log('请求开始');
+        //     let id = yield getPro();
+        //     console.log('第一个请求完成 返回的id是'+id);
+        //     yield getComments(id);
+        // }
+        // let g = gen();
+        // g.next();
+        // g.next();
 
-
-
-        function getPro(){
-            $.get('http://192.168.7.126/meituan/welcome/product',{
-                id:1
-            },function(data){
-                // console.log(data.comment);
-                g.next(data.comment);
-            },'json');
-        }
-        function getComments(id){
-            $.get('http://192.168.7.126/meituan/welcome/comment',{
-                commentid:id
-            },function(data){
-                console.log(data);
-            },'json');
-        }
+        // function getPro(){
+        //     $.get('http://192.168.7.126/meituan/welcome/product',{
+        //         id:1
+        //     },function(data){
+        //         // console.log(data.comment);
+        //         g.next(data.comment);
+        //     },'json');
+        // }
+        // function getComments(id){
+        //     $.get('http://192.168.7.126/meituan/welcome/comment',{
+        //         commentid:id
+        //     },function(data){
+        //         console.log(data);
+        //     },'json');
+        // }
 
 
 
