@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>v-model</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-model="msg">
+        <button @click="add()">add</button>
+        <ul>
+            <!-- val 数组中的元素   index 代表索引 -->
+            <li v-for="(val,index) in list">
+                {{val}}
+                <button @click="del(index)">del</button>
+            </li>
+        </ul>
+    </div>
+    <script src="vue.js"></script>
+    <script>  
+        var vm = new Vue({
+            el:"#app",
+            data:{
+                list:[],
+                msg:''
+            },
+            methods: {
+                add(){
+                   this.list.push(this.msg);
+                   this.msg = "";
+                },
+                del(idx){
+                    // 1 从哪开始删除  删除多少个  
+                    this.list.splice(idx,1);
+                }
+            }
+        });
+
+    
+    </script>
+    
+</body>
+</html>
