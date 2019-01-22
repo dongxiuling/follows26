@@ -6,7 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>v-model</title>
     <style>
-        
+        .active{
+            color: red;
+        }
     </style>
 </head>
 <body>
@@ -15,8 +17,8 @@
         <button @click="add()">add</button>
         <ul>
             <!-- val 数组中的元素   index 代表索引 -->
-            <li v-for="(val,index) in list">
-                {{val}}
+            <li v-for="(obj,index) in list" :class="{active:obj.isA}" @click="change(obj)">
+                {{obj.val}}
                 <button @click="del(index)">del</button>
             </li>
         </ul>
@@ -26,17 +28,30 @@
         var vm = new Vue({
             el:"#app",
             data:{
-                list:[],
+                list:[
+                    {
+                        val:'aaa',
+                        isA:false
+                    },
+                    {
+                        val:'bbb',
+                        isA:false
+                    }
+                ],
                 msg:''
             },
             methods: {
                 add(){
-                   this.list.push(this.msg);
+                   this.list.push({val:this.msg,isA:false});
                    this.msg = "";
                 },
-                del(idx){
+                del(index){
                     // 1 从哪开始删除  删除多少个  
-                    this.list.splice(idx,1);
+                    this.list.splice(index,1);
+                },
+                change(obj){
+                    // console.log(obj)
+                    obj.isA = !obj.isA;
                 }
             }
         });
