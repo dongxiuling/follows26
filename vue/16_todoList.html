@@ -61,8 +61,8 @@
             <button class="search" @click="search()">搜索</button>
         </div>
         <ul>
-            <li v-for="obj in showList">
-                <input type="checkbox">
+            <li v-for="obj in showList" @click="change(obj)" :class="{selected:obj.isSelect}">
+                <input type="checkbox" v-model="obj.isSelect">
                 <span>{{obj.name}}</span>
                 <span class="close">[X]</span>
                 <span class="price">{{obj.price}}</span>
@@ -145,6 +145,22 @@
                         return obj.name.includes(this.seaVal);
                     })
                     this.showList = [...newList];
+                },
+                change(obj){
+                    // showList中的obj 的isSelect属性改了
+                    obj.isSelect = !obj.isSelect;
+                    // proList修改成和showList 相同的
+                    this.proList = [...this.showList];
+                },
+                del(){
+                    // 过滤出所有没被勾选的元素
+                    var result = this.proList.filter(function(obj){
+                        return obj.isSelect == false;
+                        // return !obj.isSelect;
+                    });
+                    // 显示
+                    this.proList = [...result];
+                    this.showList = [...result];
                 }
             }
         })
