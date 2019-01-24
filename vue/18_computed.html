@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Vue不能通过索引设置数组的值-->
+    <div id="app">
+       {{name}}
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el:'#app',
+            data:{
+                firstName:'xiaoqian',
+                lastName:'sun',
+                name:'sun xiaoqian'
+            },
+            computed:{
+                fullName(){
+                    return this.lastName +" "+this.firstName ;
+                }
+            },
+            watch:{
+                firstName:function(){
+                    // console.log(this.firstName+"xxxx");
+                    this.name = this.lastName +" "+this.firstName ;
+                },
+                lastName:function(){
+                    // console.log(this.firstName+"xxxx");
+                    this.name = this.lastName +" "+this.firstName ;
+                }
+            }
+
+        })
+    </script>
+</body>
+
+</html>
