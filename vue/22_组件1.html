@@ -9,10 +9,17 @@
 <body>
     <div id="app">
         <zujian name="111" age="20"></zujian>
-        <zujian name="222" age="10"></zujian>
+        <!-- <zujian name="222" age="10"></zujian> -->
     </div>
     <script src="vue.js"></script>
+    <script type="text/template" id="temp">
+        <div>
+            <h1>{{name}}</h1>
+            <p>{{age}}</p>
+        </div>
+    </script>
     <script>
+        
     // 父组件向子组件传值 - props
         var vm = new Vue({
             el:"#app",
@@ -20,7 +27,7 @@
             },
             components: {
                 "zujian":{
-                    template:"<h1>我是组件{{name}}--{{age}}</h1>",
+                    template:"#temp",
                     props:['name','age']
                 }
             }
