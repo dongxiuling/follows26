@@ -30,17 +30,17 @@
             },
             // 
             beforeCreate () {
-                console.log(this.$data,this.$el);
+                console.log("beforeCreate",this.$data,this.$el);
             },
             // 属性已绑定，但dom还未生成  $el属性还不存在
             created () {
-                console.log(this.$data,this.$el);
+                console.log("created",this.$data,this.$el);
             },
             beforeMount () {
-                console.log(this.$data,this.$el);
+                console.log("beforeMount",this.$data,this.$el);
             },
             mounted() {
-                console.log(this.$el);
+                console.log("mounted",this.$el);
             },
             beforeUpdate () {
                 // console.log(this.$el);
