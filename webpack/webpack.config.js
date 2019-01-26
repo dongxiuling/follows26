@@ -2,6 +2,8 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const glob = require('glob');
+const PurifyCSSPlugin = require('purifycss-webpack');
 module.exports = {
     mode:'development',
     entry:{
@@ -61,7 +63,11 @@ module.exports = {
             template:'./src/test.html',
             filename:'test.html'
         }),
-        new ExtractTextPlugin('./index.css')
+        new ExtractTextPlugin('./index.css'),
+        new PurifyCSSPlugin({
+        // Give paths to parse for rules. These should be absolute!
+            paths: glob.sync(path.join(__dirname, 'src/*.html')),
+        })
     ],
     devServer:{
         contentBase:path.resolve(__dirname,'dist'),
