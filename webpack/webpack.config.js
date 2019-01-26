@@ -20,6 +20,17 @@ module.exports = {
                     fallback:"style-loader",
                     use:"css-loader"
                 })
+            },{
+                test:/\.(jpg|png|gif)$/,
+                use:[
+                    {
+                        loader:'url-loader',
+                        options:{
+                            limit:5000,
+                            outputPath:'img/'
+                        }
+                    }
+                ]
             }
         ]
     },
