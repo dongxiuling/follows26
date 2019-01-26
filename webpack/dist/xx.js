@@ -1,3 +1,4 @@
+/*! 唯创 */
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	function hotDisposeChunk(chunkId) {
 /******/ 		delete installedChunks[chunkId];
@@ -63,7 +64,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "6bd8e4d308c69671b1a6";
+/******/ 	var hotCurrentHash = "0266029df1db78758796";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -812,7 +813,7 @@ eval("// removed by extract-text-webpack-plugin\n\n//# sourceURL=webpack:///./sr
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.css */ \"./src/index.css\");\n/* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_index_css__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _test_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./test.scss */ \"./src/test.scss\");\n/* harmony import */ var _test_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_test_scss__WEBPACK_IMPORTED_MODULE_1__);\n\n\nlet a = 10;\nconsole.log(a);\n\nvar oDiv1 = document.querySelector('#div1');\n\noDiv1.innerHTML = \"哈\";\n\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.css */ \"./src/index.css\");\n/* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_index_css__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _test_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./test.scss */ \"./src/test.scss\");\n/* harmony import */ var _test_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_test_scss__WEBPACK_IMPORTED_MODULE_1__);\n\n\nvar a = 10;\nconsole.log(a);\nvar oDiv1 = document.querySelector('#div1');\noDiv1.innerHTML = \"哈\";\nvar xx = 66666;\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ }),
 
