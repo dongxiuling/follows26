@@ -31,6 +31,18 @@ module.exports = {
                         }
                     }
                 ]
+            },
+            {
+                test:/\.html$/i,
+                loader:'html-withimg-loader'
+            },
+            {
+                test:/\.scss$/,
+                // use:['style-loader','css-loader','sass-loader']
+                use:ExtractTextPlugin.extract({
+                    fallback:"style-loader",
+                    use:["css-loader","sass-loader"]
+                })
             }
         ]
     },
@@ -49,7 +61,7 @@ module.exports = {
     devServer:{
         contentBase:path.resolve(__dirname,'dist'),
         host:'localhost',
-        compress:true,
+        // compress:true,
         port:8081,
         open:true,
         hot:true
