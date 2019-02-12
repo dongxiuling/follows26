@@ -3,8 +3,9 @@
    
     <div id="nav">
       <router-link to="/">Home</router-link> |
+       <router-link to="/bb">Redict</router-link> |
       <!-- <router-link to="/about">About</router-link> | -->
-      <router-link to="/about/xx/5">About</router-link> |
+      <router-link to="/about/yy/5">About</router-link> |
       <!-- <router-link to="/mine">Mine</router-link>| -->
       <router-link :to="{name:'mine',params:{name:'zs',id:'001'}}">Mine</router-link>|
       <router-link to="/test">test</router-link>
