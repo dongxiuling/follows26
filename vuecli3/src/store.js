@@ -3,6 +3,7 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
+
 export default new Vuex.Store({
   state: {
     count:0,
@@ -15,11 +16,15 @@ export default new Vuex.Store({
     }
   },
   getters:{
-    sum:(state)=>{
+    sum(state){
       return state.count + state.b;
     }
   },
   actions: {
-    
+    addAction({commit},num){
+      commit('add',num);
+    }
   }
 })
+
+

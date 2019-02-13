@@ -10,6 +10,7 @@
     <!-- Vue不能通过索引设置数组的值-->
     <div id="app">
        {{name}}
+       {{fullName}}
     </div>
     <script src="vue.js"></script>
     <script>
@@ -24,6 +25,7 @@
                 fullName(){
                     return this.lastName +" "+this.firstName ;
                 }
+                
             },
             watch:{
                 firstName:function(){

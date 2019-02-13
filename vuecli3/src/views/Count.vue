@@ -10,23 +10,25 @@
 
         <button @click="$store.commit('add',2)">add</button>
         <button @click="add(3)">add</button>
+        <button @click="addAction(5)">actionAdd</button>
     </div>
 </template>
 <script>
-    import {mapState,mapMutations,mapGetters} from 'vuex';
+    import {mapState,mapMutations,mapGetters,mapActions} from 'vuex';
     export default {
         // computed:{
         //     count(){
         //         return this.$store.state.count;
         //     }
         // }
-        
-
         computed: {
             ... mapState(["count","a"]),
             ... mapGetters(["sum"])
         },
-        methods: mapMutations(["add"])
+        methods: {
+            ...mapMutations(["add"]),
+            ...mapActions(["addAction"])
+        }
     }
 </script>
 

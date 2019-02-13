@@ -70,6 +70,27 @@
 
         
 
+        let obj = {
+            name:'zs',
+            age:20
+        }
+
+        let {name,age} = obj;
+
+        console.log(name,age);
+
+        let [a,b] = [1,2];
+
+        function a({name,age}){
+            // obj.name
+            // obj.age
+
+            console.log(name,age)
+
+        }
+
+        a({name:'zs',age:20});
+
 
 
 
