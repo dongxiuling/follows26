@@ -11,7 +11,8 @@
       <!-- <router-link to="/mine">Mine</router-link>| -->
       <router-link :to="{name:'mine',params:{name:'zs',id:'001'}}">Mine</router-link>|
       <router-link to="/test">test</router-link>
-      <router-link to="/xxx">xxx</router-link>
+      <router-link to="/xxx">xxx</router-link>|
+       <router-link to="/count">count</router-link>
 
     </div>
 

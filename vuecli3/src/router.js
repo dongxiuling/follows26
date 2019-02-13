@@ -7,6 +7,8 @@ import Test from './views/Test.vue'
 import A from './views/A.vue'
 import B from './views/B.vue'
 import Error from './views/Error.vue'
+import Count from './views/Count.vue'
+
 
 
 
@@ -60,6 +62,10 @@ export default new Router({
       component: Home,
       alias:'/abc'
     },{
+      path:'/count',
+      component:Count
+    },
+    {
       path:'*',
       component:Error
     }
