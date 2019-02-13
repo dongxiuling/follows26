@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-   
+    <button @click="prev()">&lt;</button>
+     <button @click="goHome()">回到首页</button>
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/abc">abc</router-link> |
@@ -10,13 +11,32 @@
       <!-- <router-link to="/mine">Mine</router-link>| -->
       <router-link :to="{name:'mine',params:{name:'zs',id:'001'}}">Mine</router-link>|
       <router-link to="/test">test</router-link>
+      <router-link to="/xxx">xxx</router-link>
+
     </div>
+
+
     <transition name="fade">
       <router-view/>
     </transition>
   </div>
 </template>
+<script>
 
+export default {
+  methods:{
+    prev(){
+      this.$router.go(-2);
+    },
+    next(){
+      this.$router.go(1);
+    },
+    goHome(){
+      this.$router.push('/');
+    }
+  }
+}
+</script>
 <style>
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;

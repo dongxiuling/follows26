@@ -6,6 +6,8 @@ import Mine from './views/Mine.vue'
 import Test from './views/Test.vue'
 import A from './views/A.vue'
 import B from './views/B.vue'
+import Error from './views/Error.vue'
+
 
 
 Vue.use(Router)
@@ -16,7 +18,13 @@ export default new Router({
   routes: [
     {
       path: '/',
-      component: Home
+      component: Home,
+      beforeEnter(to,from,next){
+        console.log(to,from,next);
+
+        next();
+
+      }
     },
     {
       path: '/about/:name/:id',
@@ -51,6 +59,9 @@ export default new Router({
       path:'/',
       component: Home,
       alias:'/abc'
+    },{
+      path:'*',
+      component:Error
     }
 
   ]
