@@ -16,7 +16,6 @@
 
     </div>
 
-
     <transition name="fade">
       <router-view/>
     </transition>
