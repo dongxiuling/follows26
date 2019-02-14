@@ -1,24 +1,31 @@
 <template>
   <div id="app">
       <c-header></c-header>
+      <div id="content">
+         <h1>电影</h1>
+          <h1>电影</h1>
+           <h1>电影</h1>
+            <h1>电影</h1>
+      </div>
+      <c-footer></c-footer>
+
+
   </div>
 </template>
 <script>
-    import CHeader from '@/components/CHeader';
+    import CHeader from '@/components/CHeader.vue';
+    import CFooter from '@/components/CFooter.vue';
     export default {
       components: {
-        CHeader
+        CHeader,
+        CFooter
       }
     }
 
 </script>
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+  #content{
+    margin:1rem 0;
+  }
 
 </style>
