@@ -1,16 +1,27 @@
 <template>
-    <div class="footer">
+    <div class="footer" :style="{background:bg}">
         <ul>
-            <li v-for="(obj,index) in menu" :key="index">
-                <router-link :to="obj.path">{{obj.name}}</router-link>
+            <li v-for="(obj,index) in menu" :key="index" >
+                <router-link :to="obj.path" @click.native="change(obj)">{{obj.name}}</router-link>
             </li>
         </ul>
+
     </div>
 </template>
 
 <script>
     export default {
-        props:["menu"]
+        data(){
+            return {
+                bg:'green'
+            }
+        },
+        props:["menu"],
+        methods:{
+            change(obj){
+                this.bg = obj.bgColor;
+            }
+        }
     }
 </script>
 
