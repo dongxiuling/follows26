@@ -1,10 +1,10 @@
 <template>
   <div id="app">
-      <c-header></c-header>
+      <c-header :bgc="bgc" ></c-header>
       <div id="content">
           <router-view></router-view>
       </div>
-      <c-footer :menu="menu" ></c-footer>
+      <c-footer :menu="menu" @changeBg="color"></c-footer>
   </div>
 </template>
 <script>
@@ -32,13 +32,20 @@ export default {
            name:"图片",
            bgColor:"#4abce8"
          }
-       ]
-
+       ],
+       bgc:""
     }
   },
   components: {
     CHeader,
     CFooter
+  },
+  methods:{
+    color(bg){
+      //bg就是footer中传过来的颜色  bg放到data中  再传给header
+      console.log(bg);
+      this.bgc  = bg;
+    }
   }
 };
 </script>

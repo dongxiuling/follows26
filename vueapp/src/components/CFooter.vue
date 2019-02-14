@@ -13,13 +13,15 @@
     export default {
         data(){
             return {
-                bg:'green'
+                bg:''
             }
         },
         props:["menu"],
         methods:{
             change(obj){
                 this.bg = obj.bgColor;
+                // 通过$emit 向父组件app 传参this.bg
+                this.$emit('changeBg',this.bg);
             }
         }
     }
