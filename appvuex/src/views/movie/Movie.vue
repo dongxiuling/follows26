@@ -47,8 +47,10 @@
         },  
         methods: {
             getMovie () {
+                // 豆掰接口的访问方式
                 Axios.get("https://bird.ioliu.cn/v1?url=https://api.douban.com/v2/movie/top250?start="+this.movieList.length+"&count=10")
-                // Axios.get("/movie.json")
+                // 本地json模拟
+                // Axios.get("/movie"+this.movieList.length+".json")
                 .then((result)=>{
                     this.movieList = [...this.movieList,...result.data.subjects];
                 })
