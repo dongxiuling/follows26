@@ -6,14 +6,12 @@
         </header>
     </div>
 </template>
-
 <script>
     import {mapState} from "vuex";
     export default {
        computed: mapState(["color","name"])
     }
 </script>
-
 <style scoped>
     header{
         height:1rem;
