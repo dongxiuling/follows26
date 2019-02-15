@@ -53,13 +53,11 @@ export default {
   created(){
     // console.log(location.pathname);
     console.log(this.$route.path); // /book
+    //过滤出menu数组中path值是   this.$route.path 的，filter返回的是一个新数组
     let result = this.menu.filter((obj,index)=>{
       return obj.path == this.$route.path;
     });
-    // console.log(result);
     this.obj = result[0];
-
-    // console.log(result);
   }
 };
 </script>
