@@ -1,15 +1,15 @@
 <template>
     <div>
-        <header :style="{background:bgc}">
+        <header :style="{background:obj.bgColor}">
             <span class="goHome">首页</span>
-            电影
+            {{obj.name}}
         </header>
     </div>
 </template>
 
 <script>
     export default {
-        props:["bgc"]
+        props:["obj"]
     }
 </script>
 

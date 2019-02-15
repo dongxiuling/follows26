@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-      <c-header :bgc="bgc" ></c-header>
+      <c-header :obj="obj" ></c-header>
       <div id="content">
           <router-view></router-view>
       </div>
@@ -33,7 +33,11 @@ export default {
            bgColor:"#4abce8"
          }
        ],
-       bgc:""
+       obj:{
+           path:"/movie",
+           name:"电影",
+           bgColor:"#ff0036"
+        }
     }
   },
   components: {
@@ -41,11 +45,21 @@ export default {
     CFooter
   },
   methods:{
-    color(bg){
+    color(obj){
       //bg就是footer中传过来的颜色  bg放到data中  再传给header
-      console.log(bg);
-      this.bgc  = bg;
+      this.obj  = obj;
     }
+  },
+  created(){
+    // console.log(location.pathname);
+    console.log(this.$route.path); // /book
+    let result = this.menu.filter((obj,index)=>{
+      return obj.path == this.$route.path;
+    });
+    // console.log(result);
+    this.obj = result[0];
+
+    // console.log(result);
   }
 };
 </script>
