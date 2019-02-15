@@ -1,14 +1,20 @@
 <template>
     <div>
         <ul class="container">
-            <li>
-                <img src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2545472803.jpg" alt="">
+            <li v-for="(obj,index) in movieList" :key="index">
+                <img :src="obj.images.small" alt="">
                 <div class="info">
-                    <h3>流浪地球</h3>
-                    <p>屈楚萧</p>
-                    <p>1005152已观看</p>
-                    <p>年份：2019</p>
-                    <p>科幻/</p>
+                    <h3>{{obj.title}}</h3>
+                    <p>
+                        <span v-for="(actor,index) in obj.casts" :key="index">{{actor.name}}|</span>
+                    </p>
+                    <p>{{obj.collect_count}}已观看</p>
+                    <p>年份：{{obj.year}}</p>
+                    <p>
+                        <span v-for="(type,index) in obj.genres" :key="index">
+                            {{type}}
+                        </span>
+                    </p>
                 </div>
             </li>
         </ul>
@@ -25,9 +31,12 @@
         },
         created() {
             // jsonbird  服务器代理 解决跨域 https://bird.ioliu.cn/v1?url=
-            Axios.get("https://bird.ioliu.cn/v1?url=https://api.douban.com/v2/movie/in_theaters?city=广州&start=0&count=10")
+            // Axios.get("https://bird.ioliu.cn/v1?url=https://api.douban.com/v2/movie/top250?start=0&count=10")
+            Axios.get("/movie.json")
             .then((result)=>{
                 console.log(result);
+
+
                 this.movieList = result.data.subjects
             })
             .catch();
