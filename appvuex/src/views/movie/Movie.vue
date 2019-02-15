@@ -27,20 +27,34 @@
         data(){
             return {
                 movieList:[]
+
             }
         },
         created() {
             // jsonbird  服务器代理 解决跨域 https://bird.ioliu.cn/v1?url=
-            // Axios.get("https://bird.ioliu.cn/v1?url=https://api.douban.com/v2/movie/top250?start=0&count=10")
-            Axios.get("/movie.json")
-            .then((result)=>{
-                console.log(result);
-
-
-                this.movieList = result.data.subjects
-            })
-            .catch();
+            this.getMovie()
+            window.onscroll = () => {
+                // 滚动条滚动的高度
+                console.log(document.documentElement.scrollTop);
+                // 可视区的高度
+                console.log(document.documentElement.clientHeight);
+                // 整个滚动区的高度
+                console.log(document.documentElement.scrollHeight);
+                if( document.documentElement.scrollTop +document.documentElement.clientHeight ==  document.documentElement.scrollHeight){
+                    this.getMovie();
+                }
+            }
         },  
+        methods: {
+            getMovie () {
+                Axios.get("https://bird.ioliu.cn/v1?url=https://api.douban.com/v2/movie/top250?start="+this.movieList.length+"&count=10")
+                // Axios.get("/movie.json")
+                .then((result)=>{
+                    this.movieList = [...this.movieList,...result.data.subjects];
+                })
+                .catch();
+            }
+        }
     }
 </script>
 
