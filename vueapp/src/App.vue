@@ -4,7 +4,7 @@
       <div id="content">
           <router-view></router-view>
       </div>
-      <c-footer :menu="menu" @changeBg="color"></c-footer>
+      <c-footer :menu="menu" @changeBg="color" :color="obj.bgColor"></c-footer>
   </div>
 </template>
 <script>
@@ -51,13 +51,14 @@ export default {
     }
   },
   created(){
-    // console.log(location.pathname);
-    console.log(this.$route.path); // /book
     //过滤出menu数组中path值是   this.$route.path 的，filter返回的是一个新数组
     let result = this.menu.filter((obj,index)=>{
       return obj.path == this.$route.path;
     });
-    this.obj = result[0];
+    // 如果数组中匹配到了  才修改obj的值，否知用obj的默认值
+    if(result.length){ 
+      this.obj = result[0];
+    }
   }
 };
 </script>
