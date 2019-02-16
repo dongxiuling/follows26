@@ -18,6 +18,8 @@
                 </div>
             </li>
         </ul>
+        <img class="loading" v-show="isShow" src="@/assets/imgs/loading.gif" alt="">
+        <div v-show="isBottom">到底了</div>
     </div>
 </template>
 
@@ -26,8 +28,9 @@
     export default {
         data(){
             return {
-                movieList:[]
-
+                movieList:[],
+                isShow:false,
+                isBottom:false
             }
         },
         created() {
@@ -40,7 +43,9 @@
                 console.log(document.documentElement.clientHeight);
                 // 整个滚动区的高度
                 console.log(document.documentElement.scrollHeight);
-                if( document.documentElement.scrollTop +document.documentElement.clientHeight ==  document.documentElement.scrollHeight){
+//如果 scrollTop 到底的时候取到的是小数 
+// Math.abs(document.documentElement.scrollTop +document.documentElement.clientHeight - document.documentElement.scrollHeight) < 1
+                if( document.documentElement.scrollTop +document.documentElement.clientHeight ==  document.documentElement.scrollHeight && !this.isBottom){
                     this.getMovie();
                 }
             }
@@ -48,11 +53,16 @@
         methods: {
             getMovie () {
                 // 豆掰接口的访问方式
-                Axios.get("https://bird.ioliu.cn/v1?url=https://api.douban.com/v2/movie/top250?start="+this.movieList.length+"&count=10")
+                this.isShow = true;
+                Axios.get("https://bird.ioliu.cn/v1?url=https://api.douban.com/v2/movie/in_theaters?start="+this.movieList.length+"&count=10")
                 // 本地json模拟
                 // Axios.get("/movie"+this.movieList.length+".json")
                 .then((result)=>{
                     this.movieList = [...this.movieList,...result.data.subjects];
+                    this.isShow = false;
+                    if(this.movieList.length == result.data.total){
+                        this.isBottom = true;
+                    }
                 })
                 .catch();
             }
@@ -75,6 +85,14 @@
     .info{
         flex-grow: 1;
         margin-left:0.2rem;
+    }
+    .loading{
+        position: fixed;
+        left:50%;
+        top:50%;
+        transform: translate(-50%,-50%);
+        width:1rem;
+        height:1rem;
     }
 
 
