@@ -19,6 +19,7 @@
                 this.music = result.data.albums;
             })
             .catch();
+            //
         }
     }
 </script>
