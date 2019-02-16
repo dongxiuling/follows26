@@ -54,9 +54,9 @@
             getMovie () {
                 // 豆掰接口的访问方式
                 this.isShow = true;
-                Axios.get("https://bird.ioliu.cn/v1?url=https://api.douban.com/v2/movie/in_theaters?start="+this.movieList.length+"&count=10")
+                // Axios.get("https://bird.ioliu.cn/v1?url=https://api.douban.com/v2/movie/in_theaters?start="+this.movieList.length+"&count=10")
                 // 本地json模拟
-                // Axios.get("/movie"+this.movieList.length+".json")
+                Axios.get("/movie"+this.movieList.length+".json")
                 .then((result)=>{
                     // 如果请求本地的接口  可以用定时器做个延迟显示，方便查看loading效果啊
                     // setTimeout(()=>{
@@ -67,7 +67,6 @@
                     if(this.movieList.length == result.data.total){
                         this.isBottom = true;
                     }
-
                 })
                 .catch();
             }
