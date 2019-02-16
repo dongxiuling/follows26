@@ -58,11 +58,16 @@
                 // 本地json模拟
                 // Axios.get("/movie"+this.movieList.length+".json")
                 .then((result)=>{
+                    // 如果请求本地的接口  可以用定时器做个延迟显示，方便查看loading效果啊
+                    // setTimeout(()=>{
+                    //     ...
+                    // },1000)
                     this.movieList = [...this.movieList,...result.data.subjects];
                     this.isShow = false;
                     if(this.movieList.length == result.data.total){
                         this.isBottom = true;
                     }
+
                 })
                 .catch();
             }
