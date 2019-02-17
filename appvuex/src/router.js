@@ -5,6 +5,7 @@ import Music from './views/music/Music.vue'
 import Book from './views/book/Book.vue'
 import Photo from './views/photo/Photo.vue'
 import MusicList from './views/music/MusicList.vue'
+
 Vue.use(Router)
 
 export default new Router({
