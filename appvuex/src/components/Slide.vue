@@ -1,9 +1,11 @@
 <template>
     <div class="slide-wraper">
         <ul class="slide">
-            <li v-for="(value,index) in imgs" :key="index" v-show="index == iNow">
-                <img :src="value" alt="">
-            </li>
+            <transition-group name="fade"> 
+                <li v-for="(value,index) in imgs" :key="index" v-show="index == iNow">
+                    <img :src="value" alt="">
+                </li>
+            </transition-group>
         </ul>
         <ul class="btns">
             <li v-for="(i,index) in imgs.length" :key="index" :class="{active:index == iNow}"></li>
@@ -40,6 +42,7 @@
 }
 .slide-wraper{
     position: relative;
+    /* overflow: ; */
 }
 .btns{
     position: absolute;
@@ -58,5 +61,22 @@
 .btns li.active{
     background: #0f0;
 }
-
+.fade-enter{
+    transform: translateX(100%)
+}
+.fade-enter-active{
+    transition: transform 1s ease;
+}
+.fade-enter-to{
+    transform: translateX(0)
+}
+.fade-leave{
+    transform: translateX(0)
+}
+.fade-leave-active{
+    transition: transform 1s ease;
+}
+.fade-leave-to{
+    transform: translateX(-100%)
+}
 </style>
