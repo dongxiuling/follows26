@@ -73,7 +73,7 @@
     transform: translateX(100%)
 }
 .fade-enter-active{
-    transition: transform 1s ease;
+    transition: transform 2s ease;
 }
 .fade-enter-to{
     transform: translateX(0)
@@ -82,7 +82,7 @@
     transform: translateX(0)
 }
 .fade-leave-active{
-    transition: transform 1s ease;
+    transition: transform 2s ease;
 }
 .fade-leave-to{
     transform: translateX(-100%)
