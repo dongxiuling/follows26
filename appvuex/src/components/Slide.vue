@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="slide-wraper">
         <ul class="slide">
             <li v-for="(value,index) in imgs" :key="index" v-show="index == iNow">
                 <img :src="value" alt="">
@@ -37,6 +37,15 @@
 .slide img{
     width:100%;
     height:6rem;
+}
+.slide-wraper{
+    position: relative;
+}
+.btns{
+    position: absolute;
+    left:50%;
+    transform: translateX(-50%);
+    bottom:0.2rem;
 }
 .btns li{
     width:0.2rem;
