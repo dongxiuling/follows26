@@ -11,8 +11,8 @@
 </template>
 
 <script>
-    require('vue-swipe/dist/vue-swipe.css');
-
+    // require('vue-swipe/dist/vue-swipe.css');
+    import 'vue-swipe/dist/vue-swipe.css';
     // in ES6 modules
     import { Swipe, SwipeItem } from 'vue-swipe';
     export default {
