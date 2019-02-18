@@ -1,8 +1,8 @@
 <template>
     <div>
-        <!-- {{movieDeatil.images}}-->
-         {{$route.params.movieId}} 
+        {{$route.params.movieId}} 
         {{movieDeatil.title}}
+        <img :src="movieDeatil.images.small" />
     </div>
 </template>
 
@@ -20,8 +20,8 @@
             .then((result)=>{
                 console.log(result.data);
                 this.movieDeatil = result.data;
+                console.log(this.movieDeatil.images.small)
 
-                console.log(this.movieDeatil.images)
             }).catch(()=>{
 
             })
