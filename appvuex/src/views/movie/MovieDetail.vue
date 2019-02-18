@@ -15,7 +15,8 @@
             }
         },
         created () {
-            Axios.get(`https://bird.ioliu.cn/v1?url=https://api.douban.com/v2/movie/subject/${this.$route.params.movieId}`)
+            Axios.get("/data/moviedetail.json")
+            // Axios.get(`https://bird.ioliu.cn/v1?url=https://api.douban.com/v2/movie/subject/${this.$route.params.movieId}`)
             .then((result)=>{
                 console.log(result.data);
                 this.movieDeatil = result.data;
