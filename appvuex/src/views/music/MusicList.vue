@@ -1,11 +1,6 @@
 <template>
     <div>
-        <aplayer :music="{
-            title: 'secret base~君がくれたもの~',
-            artist: 'Silent Siren',
-            src: 'http://up.mcyt.net/md5/53/OTk1MDE2NA_Qq4329912.mp3',
-            pic: 'https://moeplayer.b0.upaiyun.com/aplayer/secretbase.jpg'
-        }" :list="list"/>
+        <aplayer :music="list[0]" :list="list" v-if="isShow" showLrc/>
     </div>
 </template>
 
@@ -15,7 +10,8 @@
     export default {
         data(){
             return {
-                list:[]
+                list:[],
+                isShow :false
             }
         },
         computed:{
@@ -35,11 +31,14 @@
                         artist:obj.author,
                         src:obj.src,
                         pic:obj.musicImgSrc,
-                        lrc:obj.lrc
+                        lrc:`http://localhost:8080/${obj.lrc}`
                     }
+
+                    // http://localhost:8080/lrc/我要你.lrc
                     this.list.push(obj1);
                 });
                 console.log(this.list)
+                this.isShow = true;
             })
         }
     }
