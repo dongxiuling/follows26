@@ -33,7 +33,6 @@
                         pic:obj.musicImgSrc,
                         lrc:`http://localhost:8080/${obj.lrc}`
                     }
-
                     // http://localhost:8080/lrc/我要你.lrc
                     this.list.push(obj1);
                 });
