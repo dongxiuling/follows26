@@ -30,18 +30,26 @@
                 if(this.iNow == this.imgs.length ){
                     this.iNow = 0;
                 }
-            },1000)
+            },2000)
         },
     }
 </script>
 
 <style scoped>
+.slide li{
+    width:100%;
+    position: absolute;
+    left:0px;
+    top:0px;
+}
 .slide img{
     width:100%;
     height:6rem;
 }
 .slide-wraper{
     position: relative;
+     height:6rem;
+     overflow: hidden;
     /* overflow: ; */
 }
 .btns{
