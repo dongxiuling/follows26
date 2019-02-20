@@ -14,6 +14,7 @@
         computed: {
             ...mapState(['photos'])
         }
+        
     }
 </script>
 
