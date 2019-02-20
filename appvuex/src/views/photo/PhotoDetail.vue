@@ -4,12 +4,11 @@
         <!-- {{$route.params.index}}
         {{photos}} -->
         <!-- {{photos[$route.params.index]}} -->
-        <router-link to="/photo">
+        <router-link to="/photo" v-if="isShow">
             <v-touch v-on:swipeleft="next()" class="bg" :style="{backgroundImage:'url('+ photos[iNow].src +')'}"></v-touch>
         </router-link>
     </div>
 </template>
-
 <script>
     import {mapState} from 'vuex';
     import Vue from 'vue';
@@ -19,7 +18,8 @@
     export default {
         data(){
             return {
-                iNow:this.$route.params.index
+                iNow:this.$route.params.index,
+                isShow :false
             }
         },
         computed: {
@@ -28,6 +28,8 @@
         created() {
             if(this.photos.length==0){
                 this.$router.push('/photo');
+            }else{
+                this.isShow = true;
             }
         },
         methods:{
