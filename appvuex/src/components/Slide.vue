@@ -8,7 +8,7 @@
             </transition-group>
         </ul>
         <ul class="btns">
-            <li v-for="(i,index) in imgs.length" :key="index" :class="{active:index == iNow}"></li>
+            <li v-for="(val,index) in imgs.length" :key="index" :class="{active:index == iNow}"></li>
         </ul>
     </div>
 </template>
@@ -16,14 +16,10 @@
     export default {
         data(){
             return {
-                imgs:[
-                    "https://img3.doubanio.com/lpic/s24468373.jpg",
-                    "https://img3.doubanio.com/lpic/s27102925.jpg",
-                    "https://img3.doubanio.com/lpic/s6989253.jpg"
-                ],
-                iNow:2
+                iNow:0
             }
         },
+        props:["imgs"],
         created() {
             setInterval(()=>{
                 this.iNow++;
