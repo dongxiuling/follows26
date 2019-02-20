@@ -1,10 +1,9 @@
 <template>
     <div>
         <!-- detail photo -->
-        <!-- {{$route.params.index}} -->
-
+        <!-- {{$route.params.index}}
+        {{photos}} -->
         <!-- {{photos[$route.params.index]}} -->
-
         <router-link to="/photo">
             <v-touch v-on:swipeleft="next()" class="bg" :style="{backgroundImage:'url('+ photos[iNow].src +')'}"></v-touch>
         </router-link>
@@ -26,10 +25,14 @@
         computed: {
             ...mapState(['photos'])
         },
+        created() {
+            if(this.photos.length==0){
+                this.$router.push('/photo');
+            }
+        },
         methods:{
             next(){
                 this.iNow++;
-               
                 // console.log(this.$route.params.index);
             }
         }
