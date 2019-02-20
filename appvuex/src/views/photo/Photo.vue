@@ -17,7 +17,6 @@
             .then((result)=>{
                 // console.log(result.data.photoData);
                 this.photo = [...result.data.photoData];
-
             })
         },
         methods:{
