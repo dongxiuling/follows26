@@ -15,12 +15,18 @@
     <script src="browser.min.js"></script>
     <script type="text/babel">
         class Main extends React.Component{
+            constructor(params) {
+                super(params);
+                this.state = {
+                    todos:['吃饭','睡觉','打豆豆']
+                }
+            }
             render(){
                 return (
                     <div>
                         <h1>简单的todolist </h1>
                         <Add></Add>
-                        <List></List>
+                        <List todos={this.state.todos}></List>
                     </div>
                 )
             }
@@ -39,9 +45,11 @@
             render(){
                 return (
                     <ul>
-                        <li>吃饭</li>
-                        <li>睡觉</li>
-                        <li>敲代码</li>
+                        {
+                            this.props.todos.map(function(val,index){
+                                return <li key={index}>{val}</li>
+                            })
+                        }
                     </ul>
                 )
             }
