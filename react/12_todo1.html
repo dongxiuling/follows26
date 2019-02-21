@@ -23,10 +23,11 @@
                 this.addHandler = this.addHandler.bind(this);
             }
             addHandler(val){
-                console.log('add 调用了 addHandler'+val)
-                // this.setState({
-
-                // })
+                let todos = [...this.state.todos];
+                todos.push(val);
+                this.setState({
+                    todos
+                })
             }
             render(){
                 return (
@@ -44,7 +45,13 @@
                 this.add = this.add.bind(this);
             }
             add(){
-                this.props.addHandler(this.myInput.value);
+                // 判断输入框是否有值
+                if(this.myInput.value){
+                    // 调用main组件addHandler 添加一条数据
+                    this.props.addHandler(this.myInput.value);
+                    // 清空input的value
+                    this.myInput.value = "";
+                }
             }
             render(){
                 return (
