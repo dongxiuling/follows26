@@ -17,22 +17,31 @@
     <script type="text/babel">
     // 1.state 是一个对象 可以存储多个值
     // 2.取state   this.state.num 
-    // 3.修改state   setState() 自定义的方法中this undefined
+    // 3.修改state   setState() 
+    // 4.自定义的方法中this值为 undefined  需要bind() 改变this指向
         class Count extends React.Component{ 
             constructor(params) {
                 super(params),
                 this.state = {
                     num :2
                 }
+                this.showName = this.showName.bind(this);
             }
             addHandle(){
                 this.setState({
                     num:++this.state.num
                 });
             }
+            showName(){
+                console.log(this.refs.username.value);
+                console.log(this.myInput.value)
+            }
             render(){
                 return (
                     <div>
+                        <input type="text" ref="username"/>
+                        <input type="text" ref={ input => this.myInput = input }/>
+                        <button onClick={this.showName}>show</button>
                         <h1>{this.state.num}</h1>
                         <button onClick={this.addHandle.bind(this)}>add</button>
                     </div>
