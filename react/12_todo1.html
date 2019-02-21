@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root">
+
+    </div>
+    <script src="react.development.js"></script>
+    <script src="react-dom.development.js"></script>
+    <script src="browser.min.js"></script>
+    <script type="text/babel">
+        class Main extends React.Component{
+            render(){
+                return (
+                    <div>
+                        <h1>简单的todolist </h1>
+                        <Add></Add>
+                        <List></List>
+                    </div>
+                )
+            }
+        }
+        class Add extends React.Component{
+            render(){
+                return (
+                    <div>
+                        <input type="text"/>    
+                        <button>add</button>
+                    </div>
+                )
+            }
+        }
+        class List extends React.Component{
+            render(){
+                return (
+                    <ul>
+                        <li>吃饭</li>
+                        <li>睡觉</li>
+                        <li>敲代码</li>
+                    </ul>
+                )
+            }
+        }
+
+        ReactDOM.render(<Main></Main>,document.getElementById('root'))
+
+
+
+
+
+    </script>
+
+    
+</body>
+</html>
