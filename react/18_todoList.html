@@ -42,11 +42,31 @@
                     ]
                 }
                 this.addHandler = this.addHandler.bind(this);
+                this.changeHandler = this.changeHandler.bind(this);
+                this.delHandler = this.delHandler.bind(this);
             }
             addHandler(val){
                 // console.log('add')
                 let todos = [...this.state.todos];
                 todos.push({name:val,isActive:false});
+                this.setState({
+                    todos
+                })
+            }
+            changeHandler(index){
+                // todos 数组中索引是index的isActive = !isActive
+                let todos = [...this.state.todos];
+                todos[index].isActive = !todos[index].isActive;
+                this.setState({
+                    todos
+                });
+            }
+            delHandler(index){
+                // console.log('del')
+                // todos 数组中索引是index 删除
+                let todos = [...this.state.todos];
+                todos.splice(index,1);
+                // state 中的todos更新
                 this.setState({
                     todos
                 })
@@ -57,7 +77,7 @@
                     <h1>todoList</h1>  
                     <Search></Search>
                     <Add addHandler={this.addHandler}></Add>
-                    <List todos={this.state.todos}></List>
+                    <List todos={this.state.todos} changeHandler={this.changeHandler} delHandler={this.delHandler}></List>
                 </div>
             )
           }
@@ -101,14 +121,20 @@
                         this.props.todos.map((task,index)=>{
                             return (
                                 <li key={index} className={ task.isActive? 'active':''}>
-                                    <input type="checkbox" defaultChecked={task.isActive}/>
+                                    <input type="checkbox" 
+                                    defaultChecked={task.isActive} 
+                                    onClick={()=>{
+                                        this.props.changeHandler(index);
+                                        }
+                                    } />
                                     <span>{task.name}</span>
-                                    <button>删除</button>
+                                    <button onClick={()=>{
+                                        this.props.delHandler(index)
+                                    }}>删除</button>
                                 </li>
                             )
                         })
                     }
-                    
                 </ul>
             )
           }
