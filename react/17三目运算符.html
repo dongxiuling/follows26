@@ -36,16 +36,31 @@
                 })
             }
             render(){
-               
+                let elem = null;
+                if(this.state.isShow){
+                    elem = <div>呵呵呵呵呵</div>;
+                }else{
+                    elem = null;
+                }
+                
                 return (
                     <div>
                         <h1>哈哈</h1>
-                        {
-                            this.state.isShow? <div>呵呵呵呵呵</div>:null
-                        }
+                        {elem}
                         <button onClick={this.change}>click</button>
                     </div>
                 )
+
+
+                // return (
+                //     <div>
+                //         <h1>哈哈</h1>
+                //         {
+                //             this.state.isShow? <div>呵呵呵呵呵</div>:null
+                //         }
+                //         <button onClick={this.change}>click</button>
+                //     </div>
+                // )
             }
         }
 
