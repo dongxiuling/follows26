@@ -27,15 +27,35 @@
                 super(params);
                 this.state = {
                     todos:[
-                        {
+                        {   
+                            id:1,
                             name:'吃饭',
                             isActive:false
                         },
-                        {
+                        {   
+                            id:2,
                             name:'睡觉',
                             isActive:false
                         },
-                        {
+                        {   
+                            id:3,
+                            name:'敲代码',
+                            isActive:true
+                        }
+                    ],
+                    showTodos:[
+                        {   
+                            id:1,
+                            name:'吃饭',
+                            isActive:false
+                        },
+                        {   
+                            id:2,
+                            name:'睡觉',
+                            isActive:false
+                        },
+                        {   
+                            id:3,
                             name:'敲代码',
                             isActive:true
                         }
@@ -44,21 +64,25 @@
                 this.addHandler = this.addHandler.bind(this);
                 this.changeHandler = this.changeHandler.bind(this);
                 this.delHandler = this.delHandler.bind(this);
+                this.searchHandler = this.searchHandler.bind(this);
             }
             addHandler(val){
                 // console.log('add')
                 let todos = [...this.state.todos];
-                todos.push({name:val,isActive:false});
+                todos.push({name:val,isActive:false,id:(new Date()).getTime()});
                 this.setState({
-                    todos
+                    todos,
+                    showTodos:todos
                 })
+                
             }
             changeHandler(index){
                 // todos 数组中索引是index的isActive = !isActive
                 let todos = [...this.state.todos];
                 todos[index].isActive = !todos[index].isActive;
                 this.setState({
-                    todos
+                    todos,
+                    showTodos:todos
                 });
             }
             delHandler(index){
@@ -68,16 +92,26 @@
                 todos.splice(index,1);
                 // state 中的todos更新
                 this.setState({
-                    todos
+                    todos,
+                    showTodos:todos
+                })
+            }
+            searchHandler(value){
+                // console.log(value);
+                let showTodos = this.state.todos.filter((obj)=>{
+                    return obj.name.includes(value)
+                })
+                this.setState({
+                    showTodos
                 })
             }
           render() {
             return (
                 <div>
                     <h1>todoList</h1>  
-                    <Search></Search>
+                    <Search searchHandler={this.searchHandler}></Search>
                     <Add addHandler={this.addHandler}></Add>
-                    <List todos={this.state.todos} changeHandler={this.changeHandler} delHandler={this.delHandler}></List>
+                    <List todos={this.state.showTodos} changeHandler={this.changeHandler} delHandler={this.delHandler}></List>
                 </div>
             )
           }
@@ -87,7 +121,11 @@
             return (
                 <div>
                     <span>搜索：</span>
-                    <input type="text"/>
+                    <input type="text" onChange={
+                        (e)=>{
+                            this.props.searchHandler(e.target.value);
+                        }
+                    }/>
                 </div>
             )
           }
@@ -120,7 +158,7 @@
                     {
                         this.props.todos.map((task,index)=>{
                             return (
-                                <li key={index} className={ task.isActive? 'active':''}>
+                                <li key={task.id} className={ task.isActive? 'active':''}>
                                     <input type="checkbox" 
                                     defaultChecked={task.isActive} 
                                     onClick={()=>{
@@ -139,10 +177,6 @@
             )
           }
         }
-        
-        
-        
-        
         ReactDOM.render(<Main></Main>,document.getElementById('root'))
     </script>
 
