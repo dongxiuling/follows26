@@ -76,20 +76,27 @@
                 })
                 
             }
-            changeHandler(index){
-                // todos 数组中索引是index的isActive = !isActive
+            changeHandler(id){
+                // todos 数组中id是参数id的isActive = !isActive
+                // 找到数组中id = 参数id 的元素的索引index
+                let index = this.state.todos.findIndex(function(obj,index){
+                    return obj.id == id
+                })
                 let todos = [...this.state.todos];
+                // 2.修改数组中索引是index的元素的isActive  = ！isActive
                 todos[index].isActive = !todos[index].isActive;
+                // 3 修改state中的todos
                 this.setState({
                     todos,
                     showTodos:todos
                 });
             }
-            delHandler(index){
+            delHandler(id){
                 // console.log('del')
-                // todos 数组中索引是index 删除
-                let todos = [...this.state.todos];
-                todos.splice(index,1);
+                // todos 数组中id是 参数id 删除
+                let todos = this.state.todos.filter((obj)=>{
+                    return obj.id != id;
+                })
                 // state 中的todos更新
                 this.setState({
                     todos,
@@ -162,12 +169,12 @@
                                     <input type="checkbox" 
                                     defaultChecked={task.isActive} 
                                     onClick={()=>{
-                                        this.props.changeHandler(index);
+                                        this.props.changeHandler(task.id);
                                         }
                                     } />
                                     <span>{task.name}</span>
                                     <button onClick={()=>{
-                                        this.props.delHandler(index)
+                                        this.props.delHandler(task.id)
                                     }}>删除</button>
                                 </li>
                             )
