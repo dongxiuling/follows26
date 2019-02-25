@@ -13,7 +13,6 @@ class App extends Component {
                 <Link to="/">跳转home页</Link>|
                 <Link to="/b/10">跳转b页</Link>|
                 <Link to="/a/5">跳转a页</Link>
-
                 {/* <Route exact path="/" component={Home}></Route>
                 <Route path="/b" component={B}></Route>
                 <Route path="/a" component={A}></Route> */}
@@ -22,8 +21,6 @@ class App extends Component {
                   <Route path="/a/:id" component={A}></Route>
                   <Route path="/" component={Home}></Route>
                 </Switch>
-
-
               </div>
           </Router>
       </div>
