@@ -1,17 +1,28 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route,Link,Switch,Redirect} from 'react-router-dom'
+import { BrowserRouter as Router, Route,Link,Switch,Redirect,withRouter} from 'react-router-dom'
 import B from './components/B';
 import A from './components/A';
 import Home from './components/Home';
 import D from './components/D';
-
+let Btn = withRouter((props) =>{
+  console.log(props);
+  return (
+    <button onClick={()=>{
+        props.history.push('/a/8')
+      }
+    }>click</button>
+  )
+});
 
 class App extends Component {
   render() {
+
+    console.log(this.props,"这是app组件的props");
     return (
       <div className="App">
           <Router>
               <div>
+                <Btn></Btn>
                 <Link to="/">跳转home页</Link>|
                 <Link to="/b/10">跳转b页</Link>|
                 <Link to="/a/5">跳转a页</Link>|

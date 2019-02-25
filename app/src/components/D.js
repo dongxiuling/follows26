@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-let D = ({match}) =>{
-    console.log(match);
+let D = (props) =>{
+    console.log(props);
     return (
       <div>
-        { match ? '111':'000'}
+        { props.match ? '111':'000'}
       </div>
     )
 }
