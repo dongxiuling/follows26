@@ -4,15 +4,25 @@ import B from './components/B';
 import A from './components/A';
 import Home from './components/Home';
 import D from './components/D';
-let Btn = withRouter((props) =>{
-  console.log(props);
-  return (
+// let Btn = withRouter((props) =>{
+//   console.log(props);
+//   return (
+//     <button onClick={()=>{
+//         props.history.push('/a/8')
+//       }
+//     }>click</button>
+//   )
+// });
+
+class Btn extends Component{
+  // console.log(props);
+  render(){
     <button onClick={()=>{
         props.history.push('/a/8')
       }
     }>click</button>
-  )
-});
+  }
+};
 
 class App extends Component {
   render() {
@@ -22,7 +32,7 @@ class App extends Component {
       <div className="App">
           <Router>
               <div>
-                <Btn></Btn>
+                <withRouter><Btn></Btn></withRouter>
                 <Link to="/">跳转home页</Link>|
                 <Link to="/b/10">跳转b页</Link>|
                 <Link to="/a/5">跳转a页</Link>|

@@ -30,7 +30,7 @@ export default class A extends Component {
             // // goForward 下一步
             // this.props.history.goForward();
             //  // push
-            // this.props.push('/');
+            // this.props.history.push('/');
           }}>-1</button>
       </div>
     )
