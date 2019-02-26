@@ -17,3 +17,9 @@ export let minus = (num) =>{
         num
     }
 }
+export let cet4 = (num) =>{
+    return {
+        type:'CET4',
+        num
+    }
+}
