@@ -9,6 +9,7 @@ class App extends Component {
     }
     addHandler(){
         console.log('add');
+        // store.dispatch 触发action
         store.dispatch(action(2));
     }
     render() {
