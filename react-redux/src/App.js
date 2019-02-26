@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-
+import store from './store';
+import action from './action';
 class App extends Component {
     constructor(params) {
         super(params);
@@ -8,6 +9,7 @@ class App extends Component {
     }
     addHandler(){
         console.log('add');
+        store.dispatch(action(2));
     }
     render() {
         return (
