@@ -29,17 +29,24 @@ import './app.css';
 class App extends Component {
   render() {
 
+  const oddEvent = (match, location) => {
+    let eventID = 222;
+    
+    return !isNaN(eventID) && eventID % 2 === 1;
+  }
+
+
     return (
       <div className="App">
           <Router>
               <div>
                 <F></F>
-                <NavLink to="/home" activeClassName="my_active">跳转home页</NavLink>|
-                <NavLink to="/b/10">跳转b页</NavLink>|
+                <NavLink to="/home" activeClassName="my_active" isActive={oddEvent}>跳转home页</NavLink>|
+                <NavLink to="/b/10"  isActive={oddEvent}>跳转b页</NavLink>|
                 <NavLink to="/a/5">跳转a页</NavLink>|
                 <NavLink to="/c">跳转c页</NavLink>|
                 <NavLink to="/d/1">跳转d页</NavLink>|
-                <NavLink to="/e">e页面</NavLink>
+                <NavLink to="/e" >e页面</NavLink>
                 {/* <Route exact path="/" component={Home}></Route>
                 <Route path="/b" component={B}></Route>
                 <Route path="/a" component={A}></Route> */}
