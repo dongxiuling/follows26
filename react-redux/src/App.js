@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import store from './store';
-import action from './action';
+import {add,minus} from './action';
 import {connect} from 'react-redux';
 class App extends Component {
     constructor(params) {
@@ -11,7 +11,7 @@ class App extends Component {
     addHandler(){
         console.log('add');
         // store.dispatch 触发action
-        store.dispatch(action(2));
+        store.dispatch(add(2));
     }
     render() {
         return (
@@ -19,7 +19,10 @@ class App extends Component {
                 {this.props.count}
                 <button onClick={
                     this.addHandler
-                }>click</button>
+                }>+++</button>
+                <button onClick={()=>{
+                    store.dispatch(minus(3));
+                }}>---</button>
             </div>
         );
     }

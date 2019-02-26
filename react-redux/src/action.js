@@ -2,7 +2,7 @@
 //     type:'ADD'
 // }
 
-let add = (num) =>{
+export let add = (num) =>{
     console.log('add--action',num);
     return {
         type:'ADD',
@@ -10,4 +10,10 @@ let add = (num) =>{
     }
 }
 
-export default add;
+export let minus = (num) =>{
+    console.log('add--action',num);
+    return {
+        type:'MINUS',
+        num
+    }
+}
