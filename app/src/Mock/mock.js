@@ -1,5 +1,8 @@
 import Mock from 'mockjs';
 var Random = Mock.Random;
+Mock.setup({
+    timeout: 500
+});
 let data = Mock.mock("http://www.weichuang.com/test",{
     "list|1-10":[
         {
