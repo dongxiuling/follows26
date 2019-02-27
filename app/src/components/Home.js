@@ -5,19 +5,37 @@ export default class Home extends Component {
     constructor(params) {
         super(params);
         this.state = {
-            isWarn:true
+            isWarn:true,
+            list:[],
+            isShow:false
         }
     }
     componentDidMount(){
         axios.get('http://www.weichuang.com/test')
         .then((result)=>{
-            console.log(result);
+            console.log(result.data);
+            this.setState({
+                list:result.data.list
+            });
         })
     }
   render() {
     return (
         <div>
             home页
+            <ul>
+                {
+                    this.state.list.map((obj,index)=>{
+                        return (
+                            <li>
+                                <p>{obj.name}</p>
+                                <p>{obj.date}</p>
+                                <img src={obj.image}/>
+                            </li>
+                        )
+                    })
+                }
+            </ul>
             <button onClick={()=>{
                 // 下n页 (n>0) 上n页 (n<0)
                 // this.props.history.go(n);
