@@ -1,11 +1,18 @@
 import React, { Component } from 'react'
 import {Prompt} from 'react-router-dom';
+import axios from 'axios';
 export default class Home extends Component {
     constructor(params) {
         super(params);
         this.state = {
             isWarn:true
         }
+    }
+    componentDidMount(){
+        axios.get('http://www.weichuang.com/test')
+        .then((result)=>{
+            console.log(result);
+        })
     }
   render() {
     return (
